@@ -1,0 +1,235 @@
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+	hgroup h3 { font-size: 20px; }
+
+	/*================BANNER==================*/
+	#banner {
+		height: 465px;
+		background-position: bottom;
+	}
+	#banner-detail h1 { font-size: 70px; }
+	#banner-detail h6 { font-size: 11px; }
+	#banner-detail p { font-size: 14px; }
+	#banner-detail {
+		width: 70%;
+		min-width: 312px;
+	}
+	#banner-detail img {
+		width: 62px;
+		height: 62px;
+		top: 135px;
+		left: 50%;
+		margin-left: -31px;
+	}
+	/*=========================================*/
+
+
+
+	/*================HEADER====================*/
+	#header,
+	#home { margin-bottom: 30px; }
+	/*=========================================*/
+
+
+
+	/*================HOME=====================*/
+	hgroup h2 { font-size: 36px; }
+	/*=========================================*/
+
+
+
+	/*=================OFFER=====================*/
+	#offer { margin-bottom: 50px; }
+	#offer .hexagon i.sprite-Diamond_icon { top: 115px; }
+	#offer .hexagon i {
+		width: 78px;
+		/*top: 110px;*/
+		/*left: 100px;*/
+		top: 58%;
+		left: 47%;
+		margin-left: -36px;
+		height: 76px;
+		margin-top: -33px;
+	}
+	#offer .figcaption h4 { padding: 0; }
+	/*=========================================*/
+
+
+
+	/*=================WORKS====================*/
+	ul#filters li { width: 29%; }
+	ul#filters a { font-size: 16px; }
+	/*=========================================*/
+
+
+
+
+	/*================PRICES====================*/
+	#prices article {
+		width: 70%;
+		height: 180px;
+		margin: 20px auto;
+	}
+	.prices-monthly-plan { padding: 35px 43px; }
+	.plan-details { width: 100%; }
+	.plan-details .arrow-down {
+		right: 50%;
+		margin-right: -45px;
+	}
+	/*=========================================*/
+
+	
+
+	.purchase-hgroup { padding: 45px 0 60px; }
+	#purchase h6 { font-size: 18px; }
+	#purchase hgroup h2 { font-size: 35px; }
+	#purchase article a {
+		font-size: 14px;
+		padding: 20px 35px;
+	}
+
+	.mobile-family-pic-holder .col-md-7 { padding: 30px 0 10px 15px; }
+	.mobile-family-pic-holder figure { padding: 0 5px; }
+	.mobile-family-pic-holder { margin: 10px 0; }
+	.mobile-family-pic-holder h5 {
+		font-size: 15px;
+		margin-bottom: 30px;
+	}
+
+	/*figcaption.hovered { right: -355px!important; }*/
+	figcaption.hovered { right: -98%!important; }
+	.move-left { left: 0px!important; }
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 479px) {
+	hgroup h3 { font-size: 20px; }
+
+	/*================BANNER==================*/
+	#banner {
+		height: 465px;
+		background-position: bottom;
+	}
+	#banner-detail h1 { font-size: 70px; }
+	#banner-detail h6 { font-size: 11px; }
+	#banner-detail p { font-size: 14px; }
+	#banner-detail {
+		width: 70%;
+		min-width: 312px;
+	}
+	#banner-detail img {
+		width: 62px;
+		height: 62px;
+		top: 135px;
+		left: 50%;
+		margin-left: -31px;
+	}
+	/*=========================================*/
+
+
+
+	/*================HEADER====================*/
+	#head1 .trapezoid { width: auto; }
+
+	#header,
+	#home { margin-bottom: 30px; }
+	/*=========================================*/
+
+
+
+	/*================HOME=====================*/
+	hgroup h2 { font-size: 36px; }
+	#home .figcaption ul { padding-left: 10px; }
+	#home .figcaption li { font-size: 15px; }
+	/*=========================================*/
+
+
+
+	/*=================OFFER=====================*/
+	#offer { margin-bottom: 50px; }
+	#offer article:nth-child(2) i { top: 59%; }
+	#offer .hexagon i {
+		width: 78px;
+		left: 47%;
+		margin-left: -36px;
+		height: 76px;
+		top: 55%;
+		margin-top: -33px;
+	}
+
+	#offer .figcaption h4 { padding: 0; }
+	/*=========================================*/
+
+
+
+	/*=================WORKS====================*/
+	ul#filters li {
+		width: 30%;
+		margin: 3px;
+	}
+	ul#filters a { font-size: 14px; }
+	/*=========================================*/
+
+
+
+
+	/*================PRICES====================*/
+	#prices article {
+		width: 70%;
+		height: 180px;
+		margin: 20px auto;
+	}
+	.prices-monthly-plan { padding: 35px 0; }
+	.prices-monthly-details { padding: 35px 25px; }
+	.plan-details { width: 100%; }
+	.plan-details .arrow-down {
+		right: 50%;
+		margin-right: -45px;
+	}
+	/*=========================================*/
+
+
+
+	.purchase-hgroup { padding: 45px 0 60px; }
+	#purchase h6 { font-size: 18px; }
+	#purchase hgroup h2 { font-size: 35px; }
+	#purchase article a {
+			font-size: 14px;
+			padding: 20px 35px;
+		}
+
+	#purchase article span { display: block; }
+	.purchase-button-wrapper {
+		padding: 11px 0 50px;
+		line-height: 70px;
+	}
+
+
+
+	.mobile-family-pic-holder h4 { font-size: 20px; }
+
+	.mobile-family-pic-holder i {
+		font-size: 20px;
+		width: 30px;
+	}
+
+	/*.mobile-family-pic-holder .col-md-7 { padding: 30px 0 10px 15px; }*/
+	.mobile-family-pic-holder .col-md-7 { padding: 4%; }
+	.mobile-family-pic-holder figure { padding: 0 5px; }
+	.mobile-family-pic-holder { margin: 10px 0; }
+	.mobile-family-pic-holder h5 {
+		font-size: 15px;
+		margin-bottom: 25px;
+	}
+
+	/*figcaption.hovered { right: -355px!important; }*/
+	figcaption.hovered { right: -98%!important; }
+	/*.move-left { left: -10px!important; }*/
+}

@@ -1,0 +1,191 @@
+.container { width: 980px; }
+
+* { font-family: sans-serif; }
+.hex-box,
+.hex-middle{
+	display: none;
+}
+.hexa-logo{
+	background-color: red;	
+}
+.hexa-logo img{
+	position: relative;
+	top: 0px;
+	left: 0px;
+
+	max-width: 100%;
+	height: auto;
+}
+.hexagon .full-hexagon{
+	
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#55000000, endColorstr=#55000000)";
+}
+.hexagon  .full-hexagon{
+	border-radius: 50%;
+	width:100%;
+}
+
+i.fa { font-family: FontAwesome!important; }
+
+a.fa { font-family: FontAwesome!important; }
+.nav.navbar-nav{
+	width: 980px;
+	margin: 0 auto;
+	float: none;
+}
+#navigation-menu { display: block!important; }
+#navigation-menu li { float: left; }
+#navigation-menu ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+#search {
+	border-right: 1px solid #ccc;
+	background-color: #e1e1e1;
+	width: 94px;
+}
+#search-box { top: -50px; }
+
+#box-search{visibility: hidden;}
+.search-box #box-search{visibility: visible;}
+#nav-div { height: 72px!important; }
+
+
+
+#head1 .col-md-4 {
+	width: 33%;
+	float: left;
+}
+
+#head1 .col-md-6 {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+#home figcaption {
+	width: 50%;
+	float: left;
+}
+
+#home figure {
+	width: 50%;
+	float: right;
+}
+
+#offer article { width: 25%; }
+
+/*===================PRICES====================*/
+#prices article .prices-monthly-plan {
+	width: 25%;
+	padding-top: 60px;
+	padding-bottom: 10px;
+}
+#prices article .prices-monthly-select { width: 16%; }
+#prices article .prices-monthly-details {
+	width: 58%;
+	background-color: #dfdddd;
+}
+#prices article  {
+	float: left;
+	padding-bottom: 0;
+	margin-top: 70px;
+}
+
+.prices-monthly-plan,
+.prices-monthly-details,
+.prices-monthly-select { min-height: 140px; }
+
+#prices .prices-monthly-details > div {
+	width: 25%;
+	float: left;
+}
+.plan-details{
+	float: none !important;
+}
+/*==============================================*/
+
+
+/*====================FACTS=====================*/
+#facts article {
+	width: 25%;
+	float: left;
+}/*==============================================*/
+
+
+/*===================PURCHASE=======================*/
+#purchase hgroup,
+#purchase article {
+	width: 50%;
+	float: left;
+}
+
+#purchase a.contact {
+	background-color: #ba2633;
+	border: 1px solid #a71f2b;
+	color: #fff;
+}/*==============================================*/
+
+
+/*=================FAMILY=====================*/
+.family-pic-holder > figure {
+	width: 33.33%;
+	float: left;
+}
+
+.family-pic-holder figcaption { right: -3000px; }
+
+.family-pic-holder figcaption > div { float: left; }
+.family-pic-holder .col-md-7 { width: 58%; }
+.family-pic-holder .col-md-5 { width: 42%; }
+
+
+/*-----------CONTACT-----------*/
+#contact { margin-top: 75px; }
+
+#contact > article {
+	width: 50%;
+	float: left;
+}
+
+#contact figure,
+#contact figcaption { float: left; }
+#contact figure.socials { padding: 40px 10px; }
+#contact figcaption { width: 50%; }
+/*==============================================*/
+
+
+/*==================TESTIMONIALS========================*/
+#testimonials hgroup,
+#testimonials h2 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#testimonials h2 { font-size: 47px!important; }
+
+#testimonials figure {
+	width: 25%;
+	float: left;
+}
+#testimonials figcaption {
+	width: 75%;
+	float: left;
+	padding-left: 90px;
+}/*==============================================*/
+
+
+/*==================FOOTER========================*/
+#footer-1 article {
+	width: 33.33%;
+	float: left;
+}
+#footer-1 article.col-md-3 { padding-left: 90px; }
+
+
+#footer-2 article {
+	width: 50%;
+	float: left;
+}
+#footer-2 .footer-navbar ul { padding: 0; }
+
+/*==============================================*/

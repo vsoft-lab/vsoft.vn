@@ -1,0 +1,155 @@
+/* * { font-family: sans-serif; }*/
+
+#home h3,
+#home p,
+#home li { font-family: sans-serif!important; }
+
+i.fa { font-family: FontAwesome!important; }
+
+a.fa { font-family: FontAwesome!important; }
+
+#head1 .col-md-4 .col-md-6 {
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+
+
+.blog-posts .likes-n-comments { -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+ }
+.blog-posts:hover .likes-n-comments { -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+ }
+
+li#search {
+	border-bottom-color: #4f4e53;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+}
+li#search:hover {
+	border-bottom-color: red;
+	border-bottom-width: 3px;
+	border-bottom-style: solid;
+}
+
+
+
+
+@media (min-width: 992px) { /*==============*/
+	.prices-plan {
+		max-height: 203px!important;
+		overflow: hidden!important;
+	}
+}/*=======================================*/
+
+@media (max-width: 991px) { /*=========================*/
+	#navigation-menu { width: 100%!important; }
+
+	#footer-1 .recent-posts,
+	#footer-1 .flicker-stream { display: none; }
+
+	/*-----------IE 9 ONLY------------*/
+	.svg .prices-monthly-plan,
+	.svg .prices-monthly-details,
+	.svg .prices-monthly-select { min-height: 203px; }
+	/*-----------IE 9 ONLY------------*/
+
+
+	/*-----------IE 8 ONLY------------*/
+	.prices-monthly-plan { height: 103px!important; }
+	/*-----------IE 8 ONLY------------*/
+}/*================================================*/
+
+@media (max-width: 479px) { /*=======================*/
+	#banner-detail { width: 100%!important; }
+	#banner-detail h1 { font-size: 60px; }
+
+	#home .hgroup h2,
+	#offer .hgroup h2,
+	#works .hgroup h2,
+	#prices .hgroup h2,
+	#post-blogs .hgroup h2,
+	#family .hgroup h2 { font-size: 30px!important; }
+
+	#home .hgroup h3,
+	#offer .hgroup h3,
+	#works .hgroup h3,
+	#prices .hgroup h3,
+	#post-blogs .hgroup h3,
+	#family .hgroup h3 { font-size: 18px!important; }
+}/*================================================*/
+
+
+
+
+
+#home .figcaption, #home .figcaption li { opacity: 1!important; }
+#home .ipad, #home .iphone { opacity: 1!important; }
+#offer .hexagon, #offer .figcaption { opacity: 1!important; }
+.prices-plan { opacity: 1!important; }
+#post-blogs article { opacity: 1!important; }
+#member1, #member2, #member3, #member4, #member5, #member6 { opacity: 1!important; }
+
+#contact .socials, .people-contact p, .people-social-figcaption,
+#name, #email, #comments,
+.contact-form .submit-btn { opacity: 1!important; }
+
+
+
+.prices-plan-wrapper .extender { max-height: 100%; }
+.prices-plan:hover { background-color: #fff!important; }
+
+
+#mailID::before,
+#phone::before { display: none; }
+
+
+#desktop-nav-div .navbar-nav > li { z-index: 100; }
+
+#home .ipad,
+#offer .hexagon i,
+.hex-middle,
+.blog-posts .date { z-index: 1; }
+
+.people-social-figure { width: 140px!important; }
+
+#contact-form .name-wrapper,
+#contact-form .email-wrapper,
+#contact-form .comments-wrapper { opacity: 1!important; }
+
+
+#post-blogs figure { background-color: #d4313f; }
+.blog-posts .date { background-color: #d4313f; }
+
+
+
+
+
+
+.cover { z-index: -9999!important; }
+
+
+
+.navbar-nav > li a { padding: 24px!important; }
+/*.navbar-nav > li:last-child { background-color: #4f4e53!important; }*/
+
+
+#nav-div .navbar-header {
+	display: block!important;
+	height: 46px!important;
+	width: 100%!important;
+}
+#nav-toggle {
+	height: 46px!important;
+	display: block!important;
+}
+
+
+
+#search-box { top: -52px; }
+
+#search { overflow: hidden; }
+#search.show-box { overflow: visible; }
+
+
+
+#search a.fa-search { color: #fff; }
