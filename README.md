@@ -1,4 +1,7 @@
-vsoft.vn
-========
+Vsoft solution
+==============
 
-Website for vsoft.vn
+From now this is our offical website.
+
+===
+Author: TungTouch at tungnguyen@vsoft.vn
