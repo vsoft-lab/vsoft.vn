@@ -831,10 +831,14 @@ add Class "all" is show default
   var email = $("#email").val();
   var comments = $("#comments").val();
   
-  $.post("http://vsoft.vn:1212/info",{name: name, email: email, comments: comments},function(result){
-  alert("send ok");
-    <!-- $("span").html(result); -->
-  });
+  // $.ajax("http://vsoft.vn:1212/info",{name: name, email: email, comments: comments},function(result){
+  // alert("send ok");
+  //});
+  
+  $.ajax(data: {name: name, email: email, comments: comments}, type: "POST", url: "http://vsoft.vn:1212/info", success: function(res) {
+  alert('Thank you.');
+  })
+  
   };
 </script>
 
