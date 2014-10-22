@@ -25,11 +25,14 @@ $("#btnSub").click(function() {
         comments: comments
     },
             type: "POST",
-            url: "http://vsoft:1212/info",
+            url: "http://vsoft.vn:1212/info",
             success: function(res) {
                 $("#name").val("");
                 $("#email").val("");
                 $("#comments").val("");
                 swal("Good job!", "You clicked the button!", "success");
+            },
+            error: function(xhr) {
+                console.log("Error: " + xhr);
             }});
 });
