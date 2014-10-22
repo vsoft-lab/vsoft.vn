@@ -30,7 +30,7 @@ $("#btnSub").click(function() {
                 $("#name").val("");
                 $("#email").val("");
                 $("#comments").val("");
-                swal("Good job!", "You clicked the button!", "success");
+                swal("Thank you!", "We will contact you as we can!", "success");
             },
             error: function(xhr) {
                 console.log("Error: " + xhr);
