@@ -712,7 +712,7 @@ add Class "all" is show default
                 <div class="bounce2"></div>
                 <div class="bounce3"></div>
             </div>
-            <button style="margin-bottom:20px" class="submit-btn" type="button" onclick="sweet()">SUBMIT NOW</button>
+            <button style="margin-bottom:20px" class="submit-btn" type="button" id="btnSub" >SUBMIT NOW</button>
 
         </form>
     </article>
@@ -824,23 +824,19 @@ add Class "all" is show default
       <!-- action="http://vsoft.vn:1212/info" -->
 <script>
   
-  
-  function sweet() {
-  
+  $("#btnSub").click(function() {
   var name = $("#name").val();
   var email = $("#email").val();
   var comments = $("#comments").val();
-  
-  // $.ajax("http://vsoft.vn:1212/info",{name: name, email: email, comments: comments},function(result){
-  // alert("send ok");
-  //});
   
   $.ajax(data: {name: name, email: email, comments: comments}, type: "POST", url: "http://vsoft.vn:1212/info", success: function(res) {
   alert('Thank you.');
   }, error: function(xhr) {
   alert(xhr);
   })
+  });
   
+  function sweet() {
   };
 </script>
 
