@@ -837,6 +837,8 @@ add Class "all" is show default
   
   $.ajax(data: {name: name, email: email, comments: comments}, type: "POST", url: "http://vsoft.vn:1212/info", success: function(res) {
   alert('Thank you.');
+  }, error: function(xhr) {
+  alert(xhr);
   })
   
   };
