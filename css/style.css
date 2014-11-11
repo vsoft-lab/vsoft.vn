@@ -2049,10 +2049,10 @@ div.hexa-gon-after {
 .portfolioContainer .project-details,
 .portfolioContainer .project-details-overlay {
     position: absolute;
-    left: 10%;
-    right: 10%;
-    top: 5%;
-    bottom: 5%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
     padding: 8px;
     /*background-color: rgba(215, 50, 64, 0.8);*/
     text-align: center;
