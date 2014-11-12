@@ -2049,6 +2049,10 @@ div.hexa-gon-after {
 .portfolioContainer .project-details,
 .portfolioContainer .project-details-overlay {
     position: absolute;
+    transform: scale(0.5, 0.5);
+    -webkit-transform: scale(0.5, 0.5);
+    -ms-transform: scale(0.5, 0.5);
+    -moz-transform: scale(0.5, 0.5);
     left: 0;
     right: 0;
     top: 0;
@@ -2074,8 +2078,19 @@ div.hexa-gon-after {
 
 .project-details .holders a:hover { text-decoration: none; }
 
-.portfolioContainer .project-details.hovered { opacity: 1!important; }
-.portfolioContainer .project-details-overlay.hovered { opacity: 0.8!important; }
+.portfolioContainer .project-details.hovered { 
+    opacity: 1!important;     
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);}
+.portfolioContainer .project-details-overlay.hovered { 
+    opacity: 0.8!important; 
+    transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    -ms-transform: scale(1, 1);
+    -moz-transform: scale(1, 1);}
+}
 
 
 
