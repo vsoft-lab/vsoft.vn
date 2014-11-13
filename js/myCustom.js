@@ -443,7 +443,7 @@ $(document).ready(function(){
 		/*----------------------------------------------------*/
 		/*	IMG-LIQUID
 		/*----------------------------------------------------*/
-			$(".imgLiquidFill").imgLiquid();
+			// $(".imgLiquidFill").imgLiquid();
 	
 });
 

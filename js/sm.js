@@ -31,6 +31,7 @@ $("#btnSub").click(function() {
                 $("#email").val("");
                 $("#comments").val("");
                 swal("Thank you!", "We will contact you as we can!", "success");
+                //console.log(res);
             },
             error: function(xhr) {
                 console.log("Error: " + xhr);
