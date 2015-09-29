@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application>
+    <getContractType>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <ParentCode>xSystem.Settings.Contract.Type</ParentCode>
+        <ConditionFields>StartIndex;EndIndex;ParentCode</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Name;Code</StaticFields>
+    </getContractType>
+
+    <getCustomer>
+        <RequestAction>SearchProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <Code>Customer</Code>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Name;ShortName;Code;DisplayName</StaticFields>
+    </getCustomer>
+
+    <getTasksByContract>
+        <ConditionFields>StartIndex;EndIndex;Contract</ConditionFields>
+        <ContractColumnType>0</ContractColumnType>
+        <DynamicFields>ProjectName;ContractName;CategoryName;TargetName;ProjectPhaseName;WorkerName;StatusName;MilestoneName;Cause</DynamicFields>
+        <EndIndex>20</EndIndex>
+        <RequestAction>SearchTask</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <StartIndex>1</StartIndex>
+        <StaticFields>Project;Issue;Name;Category;Target;ProjectPhase;Worker;Status;Milestone;PlanManHour;Progress;PlanStartDate;RemainingManHour;Created;Deadline;ReportFinishDate;Description;Id</StaticFields>
+        <StructFields>Contract</StructFields>
+    </getTasksByContract>
+
+    <getContractStatus>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <ParentCode>xSystem.Settings.Contract.Status</ParentCode>
+        <ConditionFields>StartIndex;EndIndex;ParentCode</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Name;Code</StaticFields>
+    </getContractStatus>
+
+
+    <DeleteContract>
+        <RequestAction>DeleteDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+    </DeleteContract>
+
+    <SearchContract>
+        <RequestAction>SearchDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <Code>Contract</Code>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StructFields>Department;TotalValue;Payment1;Payment2;Payment3;BusinessExpense;CommissionExpense;ActualValue
+        </StructFields>
+        <StaticFields>Type;OfficialNumber;PublishedDate;Signer;Parent;Status;Code;Id;State</StaticFields>
+        <DynamicFields>TypeName;DepartmentName;SignerName;ParentName;StatusName</DynamicFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </SearchContract>
+
+    <UpdateContract>
+        <RequestAction>UpdateDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <Code>Contract</Code>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <StaticFields>Type;OfficialNumber;PublishedDate;Signer;Parent;Status;Code</StaticFields>
+        <StructFields>Department;TotalValue;Payment1;Payment2;Payment3;BusinessExpense;CommissionExpense;ActualValue
+        </StructFields>
+        <DynamicFields>TypeName;DepartmentName;SignerName;ParentName;StatusName</DynamicFields>
+    </UpdateContract>
+
+    <InsertContract>
+        <RequestAction>InsertDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <Code>Contract</Code>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <StaticFields>Type;OfficialNumber;PublishedDate;Signer;Parent;Status;Code</StaticFields>
+        <StructFields>Department;TotalValue;Payment1;Payment2;Payment3;BusinessExpense;CommissionExpense;ActualValue
+        </StructFields>
+        <DynamicFields>TypeName;DepartmentName;SignerName;ParentName;StatusName</DynamicFields>
+    </InsertContract>
+
+
+</Application>

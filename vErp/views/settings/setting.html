@@ -1,0 +1,16 @@
+<div class="setting">
+	<div class="list padding">
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Số bản ghi lấy ra ban đầu</span>
+			<input type="number" required ng-model="setting.LimitRecordDefault" >
+		</label>
+		<label class="item item-input item-stacked-label">
+			<span class="input-label">Số bản ghi lấy ra khi lấy thêm dữ liệu</span>
+			<input type="number" required ng-model="setting.LimitRecordWhenNextPage">
+		</label>
+
+	</div>
+	<div class="padding">
+		<button hm-tap="updateSetting(setting)" class="button button-block button-positive activated">Cập nhật</button>
+	</div>
+</div>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application>
+    <getSectors>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <StaticFields>Name;Code</StaticFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <ParentCode>xSystem.Category.Sector</ParentCode>
+        <ConditionFields>StartIndex;EndIndex;ParentCode;</ConditionFields>
+        <page>1</page>
+        <start>0</start>
+    </getSectors>
+
+    <getGenders>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <StaticFields>Name;Code</StaticFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <ParentCode>xProfile.Category.Gender</ParentCode>
+        <ConditionFields>StartIndex;EndIndex;ParentCode</ConditionFields>
+        <page>1</page>
+        <start>0</start>
+    </getGenders>
+
+    <getCompanies>
+        <RequestAction>SearchProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <StaticFields>DisplayName</StaticFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>30</EndIndex>
+        <Code>Customer;Provider;Partner</Code>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <page>1</page>
+        <start>0</start>
+    </getCompanies>
+
+    <getLocations>
+        <RequestAction>SearchTerritory</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <StaticFields>Name;Code</StaticFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>100</EndIndex>
+        <ConditionFields>StartIndex;EndIndex</ConditionFields>
+        <page>1</page>
+        <start>0</start>
+    </getLocations>
+
+    <getCurators>
+        <RequestAction>SearchUser</RequestAction>
+        <RequestClass>BPM</RequestClass>
+        <limit>20</limit>
+        <start>0</start>
+        <page>1</page>
+    </getCurators>
+
+    <getContactPerson>
+        <RequestAction>SearchProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <StaticFields>DisplayName</StaticFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>50</EndIndex>
+        <Code>Contact</Code>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <page>1</page>
+        <start>0</start>
+    </getContactPerson>
+
+
+    <getOrganization>
+        <RequestAction>SearchGroup</RequestAction>
+        <RequestClass>BPM</RequestClass>
+        <limit>50</limit>
+        <start>0</start>
+        <page>1</page>
+        <GroupType>1</GroupType>
+        <ConditionFields>GroupType;</ConditionFields>
+    </getOrganization>
+
+
+
+<!--
+manage-contact
+-->
+
+    <DeleteContact>
+        <RequestAction>DeleteProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+    </DeleteContact>
+    <SearchContact>
+        <RequestAction>SearchProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <ConditionFields>StartIndex;EndIndex</ConditionFields>
+        <StaticFields>Index;DisplayName;Address;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;Id;State</StaticFields>
+        <DynamicFields>Facebook;SectorName</DynamicFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </SearchContact>
+    <UpdateContact>
+        <RequestAction>UpdateProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <ConditionFields>StartIndex;EndIndex</ConditionFields>
+        <StaticFields>Index;DisplayName;Address;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;Id</StaticFields>
+        <DynamicFields>Facebook;SectorName</DynamicFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </UpdateContact>
+    <InsertContact>
+        <RequestAction>InsertProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <ConditionFields>StartIndex;EndIndex</ConditionFields>
+        <StaticFields>Index;DisplayName;Address;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;Id</StaticFields>
+        <DynamicFields>Facebook;SectorName</DynamicFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </InsertContact>
+
+
+
+    <!-- Contact Address-->
+
+
+    <DeleteContactAddress>
+        <RequestAction>DeleteProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+    </DeleteContactAddress>
+    <SearchContactAddress>
+        <RequestClass>xProfile</RequestClass>
+        <RequestAction>SearchProfile</RequestAction>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StaticFields>Index;DisplayName;Phone;Gender;Address;Email;Birthday;IM;Parent;Code;Id</StaticFields>
+        <DynamicFields>GenderName;ParentName</DynamicFields>
+        <Code>Contact</Code>
+    </SearchContactAddress>
+    <UpdateContactAddress>
+        <RequestClass>UpdateProfile</RequestClass>
+        <RequestAction>xProfile</RequestAction>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StaticFields>Index;DisplayName;Phone;Gender;Address;Email;Birthday;IM;Parent;Code;Id</StaticFields>
+        <DynamicFields>GenderName;ParentName</DynamicFields>
+        <Code>Contact</Code>
+    </UpdateContactAddress>
+    <InsertContactAddress>
+        <RequestClass>xProfile</RequestClass>
+        <RequestAction>InsertProfile</RequestAction>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StaticFields>Index;DisplayName;Phone;Gender;Address;Email;Birthday;IM;Parent;Code;Id</StaticFields>
+        <DynamicFields>GenderName;ParentName</DynamicFields>
+        <Code>Contact</Code>
+    </InsertContactAddress>
+
+    <!-- Contact customer -->
+
+
+
+    <DeleteContactCustomer>
+        <RequestAction>DeleteProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+    </DeleteContactCustomer>
+
+    <SearchContactCustomer>
+        <RequestAction>SearchProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StaticFields>Index;ShortName;DisplayName;Address;Location;Phone;Fax;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>InternationalName;LocationName;CuratorName;ContactPersonName;Facebook;SectorName</DynamicFields>
+        <StructFields>Curator;ContactPerson</StructFields>
+        <Code>Customer</Code>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </SearchContactCustomer>
+
+    <UpdateContactCustomer>
+        <RequestAction>UpdateProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StaticFields>Index;ShortName;DisplayName;Address;Location;Phone;Fax;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>InternationalName;LocationName;CuratorName;ContactPersonName;Facebook;SectorName</DynamicFields>
+        <StructFields>Curator;ContactPerson</StructFields>
+        <Code>Customer</Code>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </UpdateContactCustomer>
+
+    <InsertContactCustomer>
+        <RequestAction>InsertProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StaticFields>Index;ShortName;DisplayName;Address;Location;Phone;Fax;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>InternationalName;LocationName;CuratorName;ContactPersonName;Facebook;SectorName</DynamicFields>
+        <StructFields>Curator;ContactPerson</StructFields>
+        <Code>Customer</Code>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </InsertContactCustomer>
+
+
+    <!-- Contact Employee -->
+
+    <DeleteContactEmployee>
+        <RequestAction>DeleteProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+    </DeleteContactEmployee>
+
+    <SearchContactEmployee>
+        <RequestAction>SearchProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StaticFields>Index;DisplayName;Address;Email;Fax;Phone;IM;Birthday;IdentityCode;Id;TaxCode;Website;Sector;Gender;Organization;Title;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>
+            IdentityPlace;IdName;Facebook;SectorName;BirthPlace;MaritalStatus;OrganizationName;TitleName;Manager;InsurancePlace;PermanentResident;VacationUsed;VacationLeft;ParentalLeave
+        </DynamicFields>
+        <StructFields>IdentityDate;TrialPeriodDate;ContractDate;Salary;InsuranceDate;InsuranceStartDate</StructFields>
+        <Code>Employee</Code>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </SearchContactEmployee>
+
+    <UpdateContactEmployee>
+        <RequestAction>UpdateProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StaticFields>Index;DisplayName;Address;Email;Fax;Phone;IM;Birthday;IdentityCode;Id;TaxCode;Website;Sector;Gender;Organization;Title;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>IdentityPlace;IdName;Facebook;SectorName;BirthPlace;MaritalStatus;OrganizationName;TitleName;Manager;InsurancePlace;PermanentResident;VacationUsed;VacationLeft;ParentalLeave</DynamicFields>
+        <StructFields>IdentityDate;TrialPeriodDate;ContractDate;Salary;InsuranceDate;InsuranceStartDate</StructFields>
+        <Code>Employee</Code>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </UpdateContactEmployee>
+
+    <InsertContactEmployee>
+        <RequestAction>InsertProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StaticFields>Index;DisplayName;Address;Email;Fax;Phone;IM;Birthday;IdentityCode;Id;TaxCode;Website;Sector;Gender;Organization;Title;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>IdentityPlace;IdName;Facebook;SectorName;BirthPlace;MaritalStatus;OrganizationName;TitleName;Manager;InsurancePlace;PermanentResident;VacationUsed;VacationLeft;ParentalLeave</DynamicFields>
+        <StructFields>IdentityDate;TrialPeriodDate;ContractDate;Salary;InsuranceDate;InsuranceStartDate</StructFields>
+        <Code>Employee</Code>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+    </InsertContactEmployee>
+
+
+    <!-- Contact partner-->
+
+
+    <DeleteContactPartner>
+        <RequestAction>DeleteProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+    </DeleteContactPartner>
+
+    <SearchContactPartner>
+        <RequestClass>xProfile</RequestClass>
+        <RequestAction>SearchProfile</RequestAction>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <ConditionFields>StartIndex;EndIndex;Code;</ConditionFields>
+        <StaticFields>Index;ShortName;DisplayName;Address;Location;Phone;Fax;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>InternationalName;LocationName;CuratorName;ContactPersonName;Facebook;SectorName</DynamicFields>
+        <StructFields>Curator;ContactPerson</StructFields>
+        <Code>Partner</Code>
+    </SearchContactPartner>
+
+    <UpdateContactPartner>
+        <RequestClass>xProfile</RequestClass>
+        <RequestAction>UpdateProfile</RequestAction>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <ConditionFields>StartIndex;EndIndex;Code;</ConditionFields>
+        <StaticFields>Index;ShortName;DisplayName;Address;Location;Phone;Fax;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>InternationalName;LocationName;CuratorName;ContactPersonName;Facebook;SectorName</DynamicFields>
+        <StructFields>Curator;ContactPerson</StructFields>
+        <Code>Partner</Code>
+    </UpdateContactPartner>
+
+    <InsertContactPartner>
+        <RequestClass>xProfile</RequestClass>
+        <RequestAction>InsertProfile</RequestAction>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <ConditionFields>StartIndex;EndIndex;Code;</ConditionFields>
+        <StaticFields>Index;ShortName;DisplayName;Address;Location;Phone;Fax;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>InternationalName;LocationName;CuratorName;ContactPersonName;Facebook;SectorName</DynamicFields>
+        <StructFields>Curator;ContactPerson</StructFields>
+        <Code>Partner</Code>
+    </InsertContactPartner>
+
+
+    <!-- Contact Provider-->
+
+    <DeleteContactProvider>
+        <RequestAction>DeleteProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+    </DeleteContactProvider>
+
+    <SearchContactProvider>
+        <RequestClass>xProfile</RequestClass>
+        <RequestAction>SearchProfile</RequestAction>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <ConditionFields>StartIndex;EndIndex;Code;</ConditionFields>
+        <StaticFields>Index;ShortName;DisplayName;Address;Location;Phone;Fax;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>InternationalName;LocationName;CuratorName;ContactPersonName;Facebook;SectorName</DynamicFields>
+        <StructFields>Curator;ContactPerson</StructFields>
+        <Code>Provider</Code>
+    </SearchContactProvider>
+
+    <UpdateContactProvider>
+        <RequestClass>xProfile</RequestClass>
+        <RequestAction>UpdateProfile</RequestAction>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <ConditionFields>StartIndex;EndIndex;Code;</ConditionFields>
+        <StaticFields>Index;ShortName;DisplayName;Address;Location;Phone;Fax;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>InternationalName;LocationName;CuratorName;ContactPersonName;Facebook;SectorName</DynamicFields>
+        <StructFields>Curator;ContactPerson</StructFields>
+        <Code>Provider</Code>
+    </UpdateContactProvider>
+    <InsertContactProvider>
+        <RequestClass>xProfile</RequestClass>
+        <RequestAction>InsertProfile</RequestAction>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <ConditionFields>StartIndex;EndIndex;Code;</ConditionFields>
+        <StaticFields>Index;ShortName;DisplayName;Address;Location;Phone;Fax;Email;IM;Birthday;IdentityCode;TaxCode;Website;Sector;BankAccount;BankName;Code;Id</StaticFields>
+        <DynamicFields>InternationalName;LocationName;CuratorName;ContactPersonName;Facebook;SectorName</DynamicFields>
+        <StructFields>Curator;ContactPerson</StructFields>
+        <Code>Provider</Code>
+    </InsertContactProvider>
+
+</Application>

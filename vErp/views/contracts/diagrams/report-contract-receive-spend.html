@@ -1,0 +1,80 @@
+<div >
+    <div class="charts" ng-if="diagramReady">
+
+        <form ng-show="showReportTableDetail" class="form-inline " role="form">
+
+            <div class="search-form">
+                <button class="waves-effect waves-light btn blue" hm-tap="{}" ns-popover
+                        ns-popover-template="popoverDiagrams5"
+                        ns-popover-trigger="click"
+                        ns-popover-placement="bottom|left">Options
+                </button>
+
+                <button class="waves-effect waves-light btn blue" type="button" ng-click="onSearch()">View details</button>
+
+            </div>
+        </form>
+
+        <div ng-show="!reportNull" class="">
+            <highchart config="chartConfig" class=""></highchart>
+            <!--<div class="col-md-12">
+                <table class="table table-bordered text-center">
+                  <tr>
+                    <td>STT</td>
+                    <td>Năm</td>
+                    <td>Số hợp đồng</td>
+                    <td>Tổng giá trị</td>
+                  </tr>
+                  <tr ng-repeat="item in chartCategories">
+                    <td>{{$index}}</td>
+                    <td>{{item}}</td>
+                    <td >{{dataByYear[item].sumContract}}</td>
+                    <td >{{dataByYear[item].sumValue}}</td>
+                  </tr>
+                </table>
+              </div>-->
+        </div>
+
+
+    </div>
+
+    <div ng-if="!diagramReady">
+
+        <div ng-show="reportNull" class="empty-data">
+            <i class="fa fa-bar-chart-o"></i>
+            <span class="glyphicon-class">Không có dữ liệu thống kê</span>
+        </div>
+
+        <div ng-show="!reportNull" class="empty-data">
+            <i class="fa fa-bar-chart-o"></i>
+            <img src="./images/spinner.png" alt="" class="fa-spinner"/> Loading data..
+        </div>
+
+    </div>
+
+</div>
+<script type="text/ng-template" id="popoverDiagrams5">
+    <div class="title-popover">
+        Tìm nhanh <img ng-src="./images/close.png" hm-tap="hidePopover()">
+    </div>
+    <ul class="ul-popover diagram-search">
+        <li>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Từ ngày
+                </div>
+                <input type="date" ng-model="date.startDate">
+            </label>
+        </li>
+        <li>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Đến ngày
+                </div>
+                <input type="date" ng-model="date.endDate">
+            </label>
+
+        </li>
+    </ul>
+</script>

@@ -1,0 +1,69 @@
+<div class="content" fix-height>
+
+    <div class="padding" ng-switch="$state.params.url">
+
+        <div ng-switch-when="bieu-do-tong-quan-du-an">
+
+            <div class="row">
+                <report-project-by-state class=""></report-project-by-state>
+            </div>
+
+            <div class="row">
+                <report-project-by-status class=""></report-project-by-status>
+            </div>
+
+
+
+            <div class="row">
+                <report-project-task-by-status class=""></report-project-task-by-status>
+            </div>
+
+
+            <div class="row">
+                <report-project-by-department class=""></report-project-by-department>
+            </div>
+
+            <div class="row">
+                <report-project-by-task-staff class=""></report-project-by-task-staff>
+            </div>
+
+
+        </div>
+
+
+        <div class="row" ng-switch-when="tinh-trang-du-an">
+            <report-project-by-state class="" show-filter="true"></report-project-by-state>
+        </div>
+
+        <div class="row update-charts" ng-switch-when="tinh-trang-cong-viec" >
+            <p>Dữ liệu đang được cập nhật</p>
+        </div>
+
+
+        <div class="row" ng-switch-when="thong-ke-theo-trang-thai">
+            <report-project-by-status class="" show-filter="true"></report-project-by-status>
+        </div>
+
+
+        <div class="row" ng-switch-when="so-luong-cong-viec-theo-trang-thai">
+            <report-project-task-by-status class="" show-filter="true"></report-project-task-by-status>
+        </div>
+
+
+        <div class="row" ng-switch-when="so-luong-du-an-theo-don-vi">
+            <report-project-by-department class="" show-filter="true"></report-project-by-department>
+        </div>
+
+        <div class="row" ng-switch-when="so-luong-cong-viec-theo-don-vi">
+            <report-project-by-task-staff class="" show-filter="true"></report-project-by-task-staff>
+        </div>
+
+
+        <div class="row" ng-switch-default>
+            <report-project-by-status class="" show-filter="true"></report-project-by-status>
+        </div>
+
+    </div>
+
+
+</div>

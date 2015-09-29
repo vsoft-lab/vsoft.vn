@@ -1,0 +1,28 @@
+<div class="modal-search">
+    <div class="title-modal">
+        Tìm kiếm
+        <button hm-tap="closeThisDialog()">Đóng</button>
+    </div>
+    <div class="content-modal">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Tìm kiếm" ng-model="searchText">
+            </label>
+        </div>
+        <ul class="list">
+
+            <li class="item item-checkbox" ng-repeat="data in optionData  | filter:searchText">
+                <label class="checkbox">
+
+                    <input type="checkbox" ng-model="searchQuery[data.model][data.value]"
+                           ng-false-value="undefined">
+                    {{ data.caption }}
+
+                </label>
+
+            </li>
+
+        </ul>
+    </div>
+</div>

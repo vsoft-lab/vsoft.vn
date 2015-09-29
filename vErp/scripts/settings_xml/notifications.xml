@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application>
+    <Tabs>
+        <Name>Công việc sắp đến hạn</Name>
+        <Url>cong-viec-sap-het-han</Url>
+        <Source>tasks.getTasksNearDeadline</Source>
+        <DisplayOnResultNull>true</DisplayOnResultNull>
+        <RecordShow>3</RecordShow>
+        <DistanceDateFromToday>3</DistanceDateFromToday>
+        <ConditionFieldByUid>Worker</ConditionFieldByUid>
+        <Fields>Name</Fields>
+    </Tabs>
+
+    <Tabs>
+        <Name>Dự án sắp kết thúc</Name>
+        <Url>du-an-sap-ket-thuc</Url>
+        <Source>tasks.getProjectNearFinish</Source>
+        <DisplayOnResultNull>true</DisplayOnResultNull>
+        <RecordShow>3</RecordShow>
+        <DistanceDateFromToday>3</DistanceDateFromToday>
+        <Fields>Name</Fields>
+    </Tabs>
+
+    <Tabs>
+        <Name>Hợp đồng sắp thanh lý</Name>
+        <Url>hop-dong-sap-thanh-ly</Url>
+        <Source>tasks.getContractNearLiquiDate</Source>
+        <DisplayOnResultNull>true</DisplayOnResultNull>
+        <RecordShow>3</RecordShow>
+        <Fields>OfficialNumber</Fields>
+    </Tabs>
+</Application>

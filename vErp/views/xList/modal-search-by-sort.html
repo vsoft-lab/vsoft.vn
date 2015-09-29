@@ -1,0 +1,29 @@
+<div class="modal-xform">
+    <div class="modal-search">
+        <div class="title-modal">
+    		Tìm kiếm sắp xếp <img src="./images/spinner.png" alt="" class="fa-spinner" ng-if="searchStart" />
+            <button hm-tap="closeThisDialog()">Đóng</button>
+        </div>
+    </div>
+
+    <div class="tk-sx">
+        <div class="padding">
+            <ul class="list">
+
+                <li class="item item-checkbox" ng-repeat="data in stateSettings.Form.Field" style="width:100%;display:block;clear:both;margin-bottom:10px;overflow:hidden"
+                ng-if="(!data.hasOwnProperty('Form') || data.Form) && data.Sort">
+                    <label class="checkbox" style="float:left">
+                        {{ data.Caption }}
+                    </label>
+
+                <span style="float:right">
+                    <select ng-model="searchByOrderQuery[data.Model]" ng-options="option.code as option.name for option in searchByOrderSelectData" ng-change="actionSearch()">
+                        <option value="">-- Chọn kiểu sắp xếp --</option>
+                    </select>
+                </span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>	

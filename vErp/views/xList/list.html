@@ -1,0 +1,188 @@
+<div class="content" lr-infinite-scroll="loadMore()" fix-height>
+
+    <div class="search">
+        <!--
+                <input type="checkbox" ng-model="checkAll" ng-change="checkAllChange(checkAll)">
+        -->
+
+        <div class="input-search">
+            <input type="text" ng-model="searchQuery.Keyword" placeholder="Search" ng-enter="actionSearch()">
+            <img src="./images/icon-filter.png" hm-tap="actionSearch()"/>
+        </div>
+        <span class="pull-right search-button">
+            <!--<button hm-tap="actionSearch()" class="seachButton"><img ng-src="./images/search.png"/></button>
+
+        <button hm-tap="$state.go('app.tasksDetail', {id: 'new'})" class="seachButton"><img ng-src="./images/plus.png"/>
+        </button>-->
+
+            <ul>
+
+                <li ns-popover
+                    ns-popover-template="popover"
+                    ns-popover-trigger="click"
+                    ns-popover-placement="bottom|right"
+                        >
+                    <a><i class="mdi-content-sort small"></i></a>
+                </li>
+
+                <li ns-popover
+                    ns-popover-template="searchPopover"
+                    ns-popover-trigger="click"
+                    ns-popover-placement="bottom|right">
+                    <a><i class="mdi-navigation-more-vert small"></i></a>
+                </li>
+
+            </ul>
+        </span>
+
+    </div>
+
+    <div ng-if="stateReady" class="container">
+
+        <div class="row">
+            <div ng-repeat="item in datasource track by $index">
+                <div class="col s12">
+
+                    <div class="card">
+                        <div class="card-content">
+                            <div ng-repeat="field in stateSettings.Form.Field track by $index">
+                                <span class="card-title activator grey-text text-darken-4"
+                                      ng-if="field.Title && field.List">
+                                    <input type="checkbox" ng-model="selectedId[item.Id]" ng-false-value="0"
+                                           ng-change="checkBoxChange(item.Id)">
+                                    <a style="z-index: 9999;" class="grey-text text-darken-4" hm-tap="selectItem(item)"
+                                       ng-bind="item | buildtitle:field.Model"></a>
+                                </span>
+                            </div>
+                            <table>
+                                <tbody>
+                                <tr ng-repeat="field in stateSettings.Form.Field track by $index">
+                                    <td ng-if="!field.Title && field.List" class="field">{{field.Caption}}</td>
+                                    <td ng-if="!field.Title && field.List" class="field">: {{item |
+                                        builddata:field.Type:field.Model}}
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <div class="card-action">
+
+                            <div class="footer-card">
+
+                                <div>
+                                    <a ng-repeat="buttomItem in xBottomBar track by $index"
+                                       ng-if="buttomItem.AlwayDisplay =='true'">
+                                <span hm-tap="buttonBarAction(buttomItem.Action, item)">
+                                    <i class="{{buttomItem.Icon}}"></i>
+
+                                    <span ng-bind="item| builddata:buttomItem.Type:buttomItem.Model"></span>
+                                </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div ng-if="searchStart || (datasource.length > 0 || !canInfineScroll)" class="text-center loading-page"
+             ng-show="loadingShow">
+            <img src="./images/spinner.png" alt="" class="fa-spinner"/> Loading data ({{datasource.length}} /
+            {{totalItem}}) .. <br/>
+
+        </div>
+        <div ng-if="datasource.length == 0" class="loading-page"> Không có dữ liệu</div>
+
+    </div>
+    <div ng-if="!stateReady" class="text-center loading-page">
+        <img src="./images/spinner.png" alt="" class="fa-spinner"/> Loading ..
+    </div>
+
+</div>
+
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+    <a hm-tap="selectItem({})" class="btn-floating btn-large waves-effect waves-light steal">
+        <i class="mdi-content-add"></i></a>
+</div>
+
+<div class="footer-xform" ng-show="_.size(selectedId) > 0">
+    <div class="button-bar">
+        <a class="button" hm-tap="editModalAll()">Sửa</a>
+        <a class="button" hm-tap="removeItems()">Xóa</a>
+        <!--
+                <a class="button" hm-tap="$state.go('app.tasks')">Thoát</a>
+        -->
+    </div>
+
+</div>
+
+
+<script type="text/ng-template" id="popover">
+    <div class="title-popover">
+        Tìm nhanh <img ng-src="./images/close.png" hm-tap="hidePopover()"/>
+    </div>
+    <ul class="ul-popover">
+        <li class="item item-checkbox" ng-repeat="data in quickSearchData">
+            <label class="checkbox" hm-tap="{}" style="overflow: hidden;display: block">
+                <input type="checkbox" ng-model="searchQuery[data.model][data.value]" ng-false-value="undefined"
+                       ng-change="actionSearch()">
+                {{ data.caption }}
+
+            </label>
+
+        </li>
+    </ul>
+</script>
+
+
+<script type="text/ng-template" id="searchPopover">
+    <div class="title-popover">
+        Tìm kiếm <img ng-src="./images/close.png" hm-tap="hidePopover()">
+    </div>
+    <div class="list popover-dropdow">
+        <ul>
+            <li ng-repeat="setting in stateSettings.Form.Field" ng-if="setting.Search">
+
+                <a class="item" ng-click="openModalSearch(setting.Model)">
+                    {{setting.Caption}}
+                    <span class="count-checkbox" ng-if="getFilterLength(searchQuery[setting.Model]) > 0">({{getFilterLength(searchQuery[setting.Model])}})</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <a class="item" ng-click="openModalSearchBySort()">
+                    Tìm kiếm sắp xếp
+                </a>
+            </li>
+        </ul>
+
+        <a class="item-date" ng-repeat="search in xSearchSetting">
+            <label class="item item-input item-select">
+                <div class="input-label" for="{{search.Model}}">
+                    {{search.Caption}}
+                </div>
+                <input type="{{search.Type}}" ng-model="searchQuery[search.Model]" id="{{search.Model}}">
+
+            </label>
+        </a>
+        <a class="item-date">
+            <label class="item item-input item-select-input item-select ">
+                <div class="input-label">
+                    Số bản ghi
+                </div>
+                <select ng-model="searchQuery.EndIndex" style="padding: 7px 40px 5px 5px;">
+                    <option ng-value="10">10</option>
+                    <option ng-value="20">20</option>
+                    <option ng-value="50">50</option>
+                </select>
+            </label>
+        </a>
+    </div>
+
+</script>
+

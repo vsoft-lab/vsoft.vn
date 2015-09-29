@@ -1,0 +1,254 @@
+<form name="form">
+<div class="modal-xform">
+ <div class="modal-search">
+
+
+	<div class="x-form">
+        <div class="tabs">
+            <div class="button-bar bar-positive">
+                <a ng-if="detailItem.Id" class="button" ng-class="{active:isActiveTab('one.tpl.html')}"
+                   ng-click="onClickTab('one.tpl.html')"> <i class="ion-edit"></i> Chi tiết</a>
+                <a ng-if="!detailItem.Id" class="button" ng-class="{active:isActiveTab('one.tpl.html')}"
+                   ng-click="onClickTab('one.tpl.html')"> <i class="ion-edit"></i> Thêm mới</a>
+
+                <a ng-if="detailItem.Id" class="button" ng-class="{active:isActiveTab('two.tpl.html')}"
+                   ng-click="onClickTab('two.tpl.html')"> <i class="icon ion-paperclip"></i> Đính
+                    kèm <span>({{attachment.length}})</span></a>
+
+            	<a class="button" 
+            	ng-class="{active:isActiveTab('three.tpl.html')}"
+            	ng-if="isContractState"
+                ng-click="onClickTab('three.tpl.html')"
+                >
+                	<i class="ion-ios7-paper-outline"></i> Công việc ({{listTaskByContract.length || 0}})
+            	</a>
+            </div>
+        </div>
+
+        <div id="mainView">
+            <div ng-include="currentTab"></div>
+        </div>
+
+        <script type="text/ng-template" id="one.tpl.html">
+            <div id="viewOne" class="padding">
+                <div  ng-if="stateReady" class="content-form">
+                    
+                        
+
+                        <div class="list" ng-repeat="field in stateSettings.Form.Field" 
+                        ng-if="!field.hasOwnProperty('Form') || field.Form">
+                            <div class="item item-input" ng-if="field.Type == 'text'">
+                                <div class="input-label"><b>{{field.Caption}}</b></div>
+                                <div class="input">
+                                    <input type="text" ng-model="detailItem[field.Model]"  ng-required="checkRequired(field.Required)" input-name="field.Model">                                    
+                                    <div ng-if="form[field.Model].$dirty && form[field.Model].$invalid">
+
+                                    <small ng-if="form[field.Model].$error.required">
+                                        Yêu cầu nhập đầy đủ dữ liệu !
+                                    </small>
+                                </div>
+                                </div>
+                            </div>
+
+
+                            <div class="item item-input" ng-if="field.Type == 'date'">
+                                    <div class="input-label"><b>{{field.Caption}}</b></div>
+                                    <div class="input">
+
+                                    
+                                        <input type="text" ng-model="detailItem[field.Model]" class="fake-date" placeholder="dd-mm-yyyy" input-name="field.Model" ng-required="checkRequired(field.Required)"
+                                            dateformat />
+
+                                        <div ng-if="form[field.Model].$dirty && form[field.Model].$invalid">
+
+                                        <small ng-if="form[field.Model].$error.required">
+                                            Yêu cầu nhập đầy đủ dữ liệu !
+                                        </small>
+                                        </div>
+                                    </div>
+                              </div>
+
+
+                            <div class="item item-input" ng-if="field.Type == 'number'">
+                                    <div class="input-label"><b>{{field.Caption}}</b></div>
+                                    <div class="input">
+
+                                        <input type="text" pattern="[0-9]*" ng-model="detailItem[field.Model]" fcsa-number="{}" 
+                                               class="number-right" ng-required="checkRequired(field.Required)">
+                                       <div ng-if="form[field.Model].$dirty && form[field.Model].$invalid">
+
+                                        <small ng-if="form[field.Model].$error.required">
+                                            Yêu cầu nhập đầy đủ dữ liệu !
+                                        </small>
+                                        </div>
+                                    </div>
+                            </div>
+
+                            
+
+                            <div class="item item-input" ng-if="field.Type == 'flag'">
+                                <div class="input-label"><b>{{field.Caption}}</b></div>
+                                <div style="width: 50%; float: left;">
+                                    <label class="checkbox" ng-repeat="flagItem in field.Source.Property">
+
+                                        <input type="checkbox"
+                                           ng-model="flagFieldData[field.Model][flagItem.Key]"
+                                           ng-change="flagFieldChange(field.Model)"
+                                           ng-init="flagFieldUpdate(field.Model, flagItem)"
+                                           input-name="field.Model"
+                                           >
+                                        {{ flagItem.Value }} <br/>
+
+
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="item item-input item-select" ng-if="field.Type == 'select'">
+                                <div class="input-label">
+                                    <b>{{field.Caption}}</b>
+                                </div>
+                                <div class="input">
+                                    <select ng-model="detailItem[field.Model]"
+                                            ng-options="option.value as option.caption for option in field.options"
+                                            ng-change="selectChangeValueDetail(field.Model, field.options)"
+                                            class="select-control"
+                                            input-name="field.Model">
+                                    </select>
+                                    <div ng-if="form[field.Model].$dirty && form[field.Model].$invalid">
+
+                                        <small ng-if="form[field.Model].$error.required">
+                                            Yêu cầu nhập đầy đủ dữ liệu !
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+
+                </div>
+
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="two.tpl.html">
+            <div id="viewTwo" class="padding" style="padding-bottom: 80px;">
+
+                
+                
+
+                <div id="viewThree" ng-if="attachment.length > 0">
+                    <div class="table-chart table-download">
+
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th class="cv">Tên file</th>
+                                <th class="kl">Người đăng</th>
+                                <th class="kl">Tải về</th>
+                                <th class="kl">Xóa</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in attachment">
+                                <td>{{$index + 1}}</td>
+                                <td>{{item.Name}}</td>
+                                <td>{{item.Username}}</td>
+                                <td class="text-center"><a style="display: block;" hm-tap="{}" 
+                                                           href="{{AttachmentUri}}?Id={{item.Id}}"><img
+                                        ng-src="./images/cloud-download.png"/></a></a></td>
+                                <td class="text-center" hm-tap="removeAttachment(item)"><a style="display: block;"><img
+                                ng-src="./images/dialog_cancel.png"/></a></a></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div ng-if="!(attachment.length > 0)" class="download-tab">
+                    <div class="padding">
+                        <p>Không có tệp tin đính kèm nào</p>
+                    </div>
+                </div>
+
+
+                <input type="file" ng-file-select="onFileSelect($files)" multiple id="fileInput" style="display:none">
+
+                <button ng-click="uploadFile()" style="margin-bottom:10px;">Chọn file tải lên</button>
+                        
+                <table class="table table-bordered" ng-if="_.size(selectedFiles) > 0">
+                    <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th class="cv">Tên file</th>
+                        <th class="kl">Dung lượng</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in selectedFiles">
+                        <td>{{$index + 1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.size | number}} KB</td>
+                    </tbody>
+                </table>
+
+            </div>
+        </script>
+
+        <script type="text/ng-template" id="three.tpl.html">
+
+            <div class="viewTwo list-products padding">
+
+                <table class="table table-bordered ">
+                    <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th class="cv">Hợp đồng</th>
+                        <th class="kl">Issue</th>
+                        <th class="kl">Task</th>
+                        <th class="kl">Nhân sự</th>
+                        <th class="kl">Danh mục</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in listTaskByContract">
+                        <td>{{$index + 1}}</td>
+                        <td>{{item.ContractName}}</td>
+                        <td>{{item.Issue}}</td>
+                        <td>{{item.Name}}</td>
+                        <td>{{item.CategoryName}}</td>
+                        <td>{{item.WorkerName}}</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div ng-if="listTaskByContract.length < 1">
+                <div class="padding">
+                    <p>Không có công việc</p>
+                </div>
+                
+            </div>
+
+        </script>
+
+
+        <div ng-if="!stateReady" class="text-center loading-page">
+            <img src="./images/spinner.png" alt="" class="fa-spinner"/> Loading...
+        </div>
+    </div>
+
+</div>
+<div class="footer-xform footer-xform-modal">
+    <div class="button-bar">
+        <a class="button" hm-tap="createItem(detailItem, form)">Thêm</a>
+        <a class="button" hm-tap="updateItem(detailItem)" ng-if="detailItem.Id">Sửa</a>
+        <a class="button" hm-tap="removeItem(detailItem);closeThisDialog()">Xóa</a>
+        <a class="button" hm-tap="closeThisDialog()">Thoát</a>
+	</div>
+</div>
+</div>
+</form>

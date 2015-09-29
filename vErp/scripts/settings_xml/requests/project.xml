@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application>
+
+    <getProjectManager>
+        <RequestAction>SearchUsers</RequestAction>
+        <RequestClass>BPM</RequestClass>
+        <page>1</page>
+        <start>0</start>
+        <limit>50</limit>
+        <StaticFields>UserId;Username</StaticFields>
+    </getProjectManager>
+
+    <getCustomers>
+        <RequestAction>SearchProfile</RequestAction>
+        <RequestClass>xProfile</RequestClass>
+        <Code>Customer</Code>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Name;ShortName;Code;DisplayName</StaticFields>
+    </getCustomers>
+
+    <getPriority>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <ParentCode>xSystem.Settings.Project.Priority</ParentCode>
+        <ConditionFields>StartIndex;EndIndex;ParentCode</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Index;Name;Code</StaticFields>
+    </getPriority>
+
+    <getDepartment>
+        <RequestAction>SearchGroup</RequestAction>
+        <RequestClass>BPM</RequestClass>
+        <ConditionFields>GroupType</ConditionFields>
+        <GroupType>1</GroupType>
+        <limit>20</limit>
+        <page>1</page>
+        <start>0</start>
+    </getDepartment>
+
+    <getProjectStatus>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <ParentCode>xSystem.Settings.Project.Status</ParentCode>
+        <ConditionFields>StartIndex;EndIndex;ParentCode</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Name;Code</StaticFields>
+    </getProjectStatus>
+
+    <getProjectState>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <ParentCode>xSystem.Settings.Project.State</ParentCode>
+        <ConditionFields>StartIndex;EndIndex;ParentCode</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Index;Name;Code</StaticFields>
+    </getProjectState>
+
+
+
+    <DeleteProject>
+        <RequestAction>DeleteProject</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+    </DeleteProject>
+
+    <SearchProject>
+        <RequestAction>SearchProject</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ConditionFields>StartIndex;EndIndex</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <StaticFields>Name;Manager;Parent;Index;Status;Id;</StaticFields>
+        <DynamicFields>ManagerName;ParentName;DepartmentName;StatusName;StateName;Version</DynamicFields>
+        <StructFields>Department;Progress;StartDate;State;FinishDate;PlanManHour;ActualManHour</StructFields>
+    </SearchProject>
+
+    <InsertProject>
+        <RequestAction>InsertProject</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ConditionFields>StartIndex;EndIndex</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Name;Manager;Parent;Index;Status;Id;</StaticFields>
+        <DynamicFields>ManagerName;ParentName;DepartmentName;StatusName;StateName;Version</DynamicFields>
+        <StructFields>Department;Progress;StartDate;State;FinishDate;PlanManHour;ActualManHour</StructFields>
+    </InsertProject>
+
+    <UpdateProject>
+        <RequestAction>UpdateProject</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ConditionFields>StartIndex;EndIndex</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Name;Manager;Parent;Index;Status;Id;</StaticFields>
+        <DynamicFields>ManagerName;ParentName;DepartmentName;StatusName;StateName;Version</DynamicFields>
+        <StructFields>Department;Progress;StartDate;State;FinishDate;PlanManHour;ActualManHour</StructFields>
+    </UpdateProject>
+
+
+</Application>

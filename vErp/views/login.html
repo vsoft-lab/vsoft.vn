@@ -1,0 +1,47 @@
+<div class="login">
+
+    <div class="content-login container">
+        <div class="text-center logo-login">
+            <img src="./images/logo-login.png" alt=""/>
+        </div>
+        <h3 class="text-center">vERP Preview - A Product Build From PhoneGap | Angular.js</h3>
+
+        <div class="row">
+            <form action="" class="form-login col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="mdi-action-assignment-ind prefix"></i>
+                        <input id="username" ng-model="loginField.username" type="text" class="validate">
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="mdi-communication-vpn-key prefix"></i>
+                        <input id="password" ng-model="loginField.password" type="password" class="validate"
+                               ng-enter="login(loginField);closeKeyboard()">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="col s12">
+                        <input type="checkbox" id="rememberLogin" ng-model="loginField.isRemember">
+                        <label for="rememberLogin">Remember Login</label>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        <div class="row">
+            <a class="waves-effect waves-light btn-large col s12" ng-click="login(loginField);closeKeyboard()">
+                <img src="./images/spinner.png" alt="" class="fa-spinner" ng-if="loginProcess"/> Login
+            </a>
+        </div>
+    </div>
+
+    <div class="text-center footer-login">
+        Hire us: hi@vsoft.vn
+    </div>
+
+
+</div>
+
+
+

@@ -1,0 +1,70 @@
+
+<div class="content" fix-height>
+
+    <div class="padding" ng-switch="$state.params.url">
+
+        <div ng-switch-when="bieu-do-tong-quan-hop-dong">
+
+
+            <div class="row">
+                <report-contract-value-payment class=""></report-contract-value-payment>
+            </div>
+
+            <div class="row">
+                <report-contract-value-payment-staff class=""></report-contract-value-payment-staff>
+            </div>
+            <div class="row">
+                <report-contract-buy-sell class=""></report-contract-buy-sell>
+            </div>
+
+            <div class="row">
+                <report-contract-payment-status class=""></report-contract-payment-status>
+            </div>
+
+            <div class="row">
+                <report-contract-receive-spend class=""></report-contract-receive-spend>
+            </div>
+
+        </div>
+
+        <div class="row" ng-switch-when="gia-tri-tinh-trang-thanh-toan-hop-dong">
+            <report-contract-value-payment show-filter="true" class=""></report-contract-value-payment>
+        </div>
+
+
+        <div class="row update-charts" ng-switch-when="so-luong-va-tong-gia-tri-hop-dong-theo-nam">
+            <report-contract-staff show-filter="true" class=""></report-contract-staff>
+        </div>
+
+        <div class="row" ng-switch-when="tong-gia-tri-hop-dong-cua-cac-dv-theo-nam">
+            <report-contract-value-payment-staff show-filter="true" class=""></report-contract-value-payment-staff>
+        </div>
+
+
+        <div class="row" ng-switch-when="tong-gia-tri-hop-dong-va-tinh-trang-thanh-toan-theo-dv">
+            <report-contract-buy-sell class="" show-filter="true"></report-contract-buy-sell>
+        </div>
+
+
+        <div class="row" ng-switch-when="gia-tri-hop-dong-va-cac-dot-thanh-toan">
+            <report-contract-payment-status class="" show-filter="true"></report-contract-payment-status>
+        </div>
+
+        <div class="row" ng-switch-when="gia-tri-hop-dong-va-cac-loai-chi-phi-khac">
+            <report-contract-receive-spend class="" show-filter="true"></report-contract-receive-spend>
+        </div>
+
+        <!--     <div class="row update-charts" ng-switch-when="gia-tri-hop-dong-va-tinh-trang-thanh-toan-theo-dong-sp">
+                 <report-contract-value-payment class=""></report-contract-value-payment>
+                 <p>Dữ liệu đang được cập nhật</p>
+             </div>-->
+
+
+        <div class="row" ng-switch-default>
+            <report-contract-value-payment class=""></report-contract-value-payment>
+        </div>
+
+    </div>
+
+
+</div>

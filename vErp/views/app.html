@@ -1,0 +1,112 @@
+<div id="header" ng-class="($state.current.name == 'app.notification') ? 'notification-header' : ''">
+    <div class="menu-top">
+        <div class="top-bar" hm-drag-left="swipeLeftTop($event)"
+             hm-drag-right="swipeRightTop($event)">
+            <button close-menu hm-tap="goCats = false">
+                <i class="mdi-navigation-menu small"></i>
+            </button>
+            <div class="logo">
+                <img ng-src="./images/logo.png"/>
+            </div>
+            <div class="nav-header">
+                <ul>
+                    <li>
+                        <a hm-tap="$state.go('app.notification')">
+                            <i class="mdi-social-public small"></i>
+                            <span>{{notificationCount}}</span>
+                        </a>
+                        <!--<a>
+                            <img src="./images/comment-xmoney.png" alt=""/>
+                        </a>-->
+                        <a hm-tap="runCatsMenu()">
+                            <i class="mdi-action-subject small"></i>
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="top-footer-bar" ng-if="$state.current.name !== 'app.notification'">
+            <div>
+                <a ng-repeat="(mIndex, item) in xMenu"
+                   hm-tap="changeStateMenuBar('app.list', {state: item.Url}, item);runMenu(mIndex)"> {{item.Name}} </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<my-menu>
+    <div>
+
+        <nav class="menu-left" id="myMenu" ng-class="MenuClass">
+            <ul bindonce="item" ng-repeat="(mIndex, item) in xMenu">
+                <li class="parent-menu">
+                    <a href=""><img ng-src="./images/{{item.Icon}}">{{item.Name}}</a>
+                </li>
+                <ul class="child-menu">
+                    <span bindonce="sub" ng-repeat="sub in item.SubMenu">
+
+                    <li close-menu bo-if="sub.Template == 'list' && checkPermission(sub)"
+                        hm-tap="$state.go('app.list', {state: sub.Url}); runMenu(mIndex);loadMenu(sub)"
+                        ui-sref-active-eq="active"
+                        ng-class="($state.params.state == sub.Url) ? 'active' : '' ">
+                        <a href=""><img ng-src="./images/{{sub.Icon}}">{{sub.Name}} </a>
+                    </li>
+
+
+                    <li close-menu bo-if="sub.Template == 'diagram' && checkPermission(sub)"
+                        hm-tap="$state.go(sub.State, {url: sub.Url}); runMenu(mIndex)"
+                        ng-class="($state.params.url == sub.Url) ? 'active' : '' ">
+                        <a href=""><img ng-src="./images/{{sub.Icon}}">{{sub.Name}}</a>
+                    </li>
+
+                    </span>
+                </ul>
+            </ul>
+            <ul style="margin-bottom: 80px;">
+            
+                <li close-menu class="parent-menu" hm-tap="$state.go('app.settings')">
+                    <a href=""><img ng-src="./images/ttdt.png" class="pull-left"
+                                    style="margin-top:6px; width: 16px; display:block" alt=""/> Settings </a>
+                </li>
+
+                <li class="parent-menu" hm-tap="logout()">
+                    <a href=""><img ng-src="./images/power-off.png" class="pull-left"
+                                    style="margin-top:6px; width: 16px; display:block" alt=""/> LogOut </a>
+                </li>
+
+                
+            </ul>
+        </nav>
+
+    </div>
+</my-menu>
+
+<div class="menu-right" ng-show="goCats">
+
+    <ul class="child-menu">
+                    <span ng-repeat="sub in xMenuRight">
+                    <li ng-if="sub.Template == 'list'"
+                        hm-tap="$state.go('app.list', {state: sub.Url});closeRightMenu();"
+                        ui-sref-active-eq="active">
+                        <a href="" ng-class="($state.params.state == sub.Url) ? 'active' : '' "><img
+                                ng-src="./images/{{sub.Icon}}">{{sub.Name}}</a>
+                    </li>
+
+
+                    <li ng-if="sub.Template == 'diagram'"
+                        hm-tap="$state.go(sub.State, {url: sub.Url});closeRightMenu()">
+                        <a href="" ng-class="($state.params.url == sub.Url) ? 'active' : '' ">
+                            <img ng-src="./images/{{sub.Icon}}">{{sub.Name}}
+                        </a>
+                    </li>
+                        </span>
+    </ul>
+
+</div>
+
+<!-- hm-drag-right="swipeRight($event)" hm-drag-left="swipeLeft($event)"-->
+<ui-view id="mainApp" hm-swipe-left="swipeLeft($event)" ng-class="($state.current.name == 'app.notification') ? 'notification-main' : ''"
+         hm-swipe-right="swipeRight($event)"></ui-view>

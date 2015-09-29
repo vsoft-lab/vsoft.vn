@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Application>
+	<template>face-timeline</template>
+	<xlistPrefix>-</xlistPrefix>
+	
+	<Form>
+		<Field>
+			<Caption></Caption>
+			<Model>DisplayName;Email</Model>
+			<Type>number</Type>
+			<Title>true</Title>
+			<List>true</List>
+			<Form>false</Form>
+		</Field>
+
+		<Field>
+			<Caption>STT</Caption>
+			<Model>Index</Model>
+			<Type>number</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Tên đầy đủ</Caption>
+			<Model>DisplayName</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Điện thoại</Caption>
+			<Model>Phone</Model>
+			<Type>text</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Giới tính</Caption>
+			<Model>Gender</Model>
+			<Type>select</Type>
+			<Source>contact.getGenders</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<QuickFilter>true</QuickFilter>
+			<Search>true</Search>
+
+		</Field>
+
+		<Field>
+			<Caption>Địa chỉ liên hệ</Caption>
+			<Model>Address</Model>
+			<Type>text</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Email</Caption>
+			<Model>Email</Model>
+			<Type>text</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Sinh nhật</Caption>
+			<Model>Birthday</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Nick</Caption>
+			<Model>IM</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Công ty</Caption>
+			<Model>Parent</Model>
+			<Type>select</Type>
+			<Source>contact.getCompanies</Source>
+			<Display>Id</Display>
+			<Display>DisplayName</Display>
+			<Search>true</Search>
+			<List>true</List>
+		</Field>
+	</Form>
+
+	<xBottomBar>
+		<Icon>mdi-action-thumb-up</Icon>
+		<Model>TotalLikes</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>number</Type>
+	</xBottomBar>
+
+	<xBottomBar>
+		<Icon>mdi-communication-forum</Icon>
+		<Model>TotalComments</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>number</Type>
+	</xBottomBar>
+
+	<xBottomBar>
+		<Icon>mdi-editor-insert-invitation</Icon>
+		<Model>Birthday</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>date</Type>
+	</xBottomBar>
+
+	<Action>
+		<Delete>contact.DeleteContactAddress</Delete>
+		<Get>contact.SearchContactAddress</Get>
+		<Update>contact.UpdateContactAddress</Update>
+		<Add>contact.InsertContactAddress</Add>
+	</Action>
+
+</Application>

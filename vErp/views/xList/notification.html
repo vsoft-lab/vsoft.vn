@@ -1,0 +1,19 @@
+<div class="notification">
+    <div>
+
+        <div ng-repeat="tab in Tabs" ng-if="notificationDataSource[tab.Source].length !== 0 || tab.DisplayOnResultNull">
+
+            <h3>{{tab.Name}}<a hm-tap="$state.go('app.DetailNotification', {url: tab.Url + '-' + $index})"><img
+                    src="./images/icon-xface-cv.png"> Xem tất cả</a></h3>
+
+            <ul>
+                <li ng-repeat="item in notificationDataSource[tab.Source]"><a>{{item[tab.Fields]}}</a></li>
+            </ul>
+
+    <span ng-if="notificationDataSource[tab.Source].length == 0" class="padding">
+        Không có dữ liệu
+    </span>
+
+        </div>
+    </div>
+</div>

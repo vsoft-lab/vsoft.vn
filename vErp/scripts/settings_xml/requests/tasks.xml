@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application>
+    <getProjects>
+        <RequestAction>SearchProject</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <page>1</page>
+        <start>0</start>
+        <limit>50</limit>
+    </getProjects>
+
+    <getCategories>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ParentCode>xSystem.Category.Task</ParentCode>
+        <ConditionFields>ParentCode</ConditionFields>
+        <StaticFields>Name</StaticFields>
+        <page>1</page>
+        <start>0</start>
+        <limit>50</limit>
+    </getCategories>
+
+    <getStates>
+        <Property>
+            <Key>4</Key>
+            <Value>Đã lập kế hoạch</Value>
+        </Property>
+
+        <Property>
+            <Key>8</Key>
+            <Value>Đã phân công</Value>
+        </Property>
+
+        <Property>
+            <Key>16</Key>
+            <Value>Công việc phát sinh</Value>
+        </Property>
+
+        <Property>
+            <Key>64</Key>
+            <Value>Quá hạn</Value>
+        </Property>
+
+        <Property>
+            <Key>128</Key>
+            <Value>Đang thực hiện</Value>
+        </Property>
+    </getStates>
+
+    <getPhases>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ParentCode>xSystem.Category.Phase</ParentCode>
+        <ConditionFields>ParentCode</ConditionFields>
+        <page>1</page>
+        <start>0</start>
+        <limit>50</limit>
+        <StaticFields>Name</StaticFields>
+    </getPhases>
+
+    <getTargets>
+        <RequestAction>SearchTarget</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <limit>20</limit>
+        <page>1</page>
+        <start>0</start>
+    </getTargets>
+
+    <getContracts>
+        <RequestAction>SearchDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <StaticFields>OfficialNumber;Id</StaticFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <Code>Contract</Code>
+        <ConditionFields>StartIndex;EndIndex;Code;</ConditionFields>
+        <page>1</page>
+        <start>0</start>
+    </getContracts>
+
+
+    <getStatus>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ParentCode>xSystem.Category.Status</ParentCode>
+        <ConditionFields>ParentCode</ConditionFields>
+        <limit>50</limit>
+        <start>0</start>
+        <page>1</page>
+        <StaticFields>Name</StaticFields>
+    </getStatus>
+
+    <getEmployee>
+        <RequestAction>SearchUsers</RequestAction>
+        <RequestClass>BPM</RequestClass>
+        <limit>50</limit>
+        <start>0</start>
+        <page>1</page>
+        <StaticFields>UserId;Username</StaticFields>
+    </getEmployee>
+
+    <getMilestone>
+        <RequestAction>SearchMilestone</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ParentCode>xSystem.Settings.Project.State</ParentCode>
+        <limit>50</limit>
+        <start>0</start>
+        <page>1</page>
+        <StaticFields>Name;Description</StaticFields>
+    </getMilestone>
+
+
+    <DeleteTask>
+        <RequestAction>DeleteTask</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+    </DeleteTask>
+
+    <SearchTask>
+        <RequestAction>SearchTask</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ConditionFields>StartIndex;EndIndex;DateType</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <StaticFields>
+            Issue;Name;Project;Category;Target;ProjectPhase;Worker;Status;Milestone;PlanManHour;Progress;PlanStartDate;RemainingManHour;Created;Deadline;ReportFinishDate;Description;Id;State
+        </StaticFields>
+        <DynamicFields>
+            ProjectName;ContractName;CategoryName;TargetName;ProjectPhaseName;WorkerName;StatusName;MilestoneName;Cause;StateName
+        </DynamicFields>
+        <StructFields>Contract;TotalLikes;TotalComments</StructFields>
+        <DateType>PlanStartDate</DateType>
+    </SearchTask>
+
+    <InsertTask>
+        <RequestAction>InsertTask</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ConditionFields>StartIndex;EndIndex</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>
+            Issue;Name;Project;Category;Target;ProjectPhase;Worker;Status;Milestone;PlanManHour;Progress;PlanStartDate;RemainingManHour;Created;Deadline;ReportFinishDate;Description;Id;State
+        </StaticFields>
+        <DynamicFields>
+            ProjectName;CategoryName;TargetName;ProjectPhaseName;WorkerName;StatusName;MilestoneName;Cause;StateName
+        </DynamicFields>
+
+    </InsertTask>
+
+    <UpdateTask>
+        <RequestAction>UpdateTask</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ConditionFields>StartIndex;EndIndex</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>
+            Issue;Name;Project;Category;Target;ProjectPhase;Worker;Status;Milestone;PlanManHour;Progress;PlanStartDate;RemainingManHour;Created;Deadline;ReportFinishDate;Description;Id;State
+        </StaticFields>
+        <DynamicFields>
+            ProjectName;CategoryName;TargetName;ProjectPhaseName;WorkerName;StatusName;MilestoneName;Cause
+        </DynamicFields>
+
+    </UpdateTask>
+
+
+    <getTasksNearDeadline>
+        <RequestAction>SearchTask</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ConditionFields>StartIndex;EndIndex;StartDate;EndDate;DateType;Worker</ConditionFields>
+        <StaticFields>
+            Issue;Name;Project;Category;Target;ProjectPhase;Worker;Status;Milestone;PlanManHour;Progress;PlanStartDate;RemainingManHour;Created;Deadline;ReportFinishDate;Description;Id;State
+        </StaticFields>
+        <DynamicFields>
+            ProjectName;CategoryName;TargetName;ProjectPhaseName;WorkerName;StatusName;MilestoneName;Cause
+        </DynamicFields>
+        <StructFields>Contract;TotalLikes;TotalComments</StructFields>
+        <DateType>Deadline</DateType>
+        
+    </getTasksNearDeadline>
+
+
+    <getProjectNearFinish>
+        <RequestAction>SearchProject</RequestAction>
+        <RequestClass>Tasks</RequestClass>
+        <ConditionFields>StartIndex;EndIndex;DateType</ConditionFields>
+        
+        <StaticFields>Name;Manager;Parent;Index;Status;Id;</StaticFields>
+        <DynamicFields>
+            ManagerName;ParentName;DepartmentName;StatusName;StateName;Version
+        </DynamicFields>
+        <StructFields> 
+            Department;Progress;StartDate;State;FinishDate;PlanManHour;ActualManHour
+        </StructFields>
+        <DateType>FinishDate</DateType>
+    </getProjectNearFinish>
+
+
+    <getContractNearLiquiDate>
+        <RequestAction>SearchDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <Code>Contract</Code>
+        <ConditionFields>StartIndex;EndIndex;Code;Status</ConditionFields>
+        <StructFields>Department;TotalValue;Payment1;Payment2;Payment3;BusinessExpense;CommissionExpense;ActualValue
+        </StructFields>
+        <StaticFields>Type;OfficialNumber;PublishedDate;Signer;Parent;Status;Code;Id;State</StaticFields>
+        <DynamicFields>TypeName;DepartmentName;SignerName;ParentName;StatusName</DynamicFields>
+        <Status>73b732d5-76d2-41d8-9494-7a771c4067bc</Status>
+    </getContractNearLiquiDate>
+</Application>

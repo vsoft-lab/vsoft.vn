@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Application>
+	<template>face-timeline</template>
+	<xlistPrefix>-</xlistPrefix>
+	
+	<LineColor>
+		<State>
+			<Code>16</Code>
+			<Color>red</Color>
+		</State>
+
+		<State>
+			<Code>4</Code>
+			<Color>purple</Color>
+		</State>
+
+		<State>
+			<Code>64</Code>
+			<Color>blue</Color>
+		</State>
+
+		<State>
+			<Code>32</Code>
+			<Color>green</Color>
+		</State>
+	</LineColor>
+
+
+	<Form>
+
+		<!--xList title -->
+		<Field>
+			<Caption></Caption>
+			<Model>ProjectName;Issue;Name</Model>
+			<Type>text</Type>
+			<Title>true</Title>
+			<List>true</List>
+			<Form>false</Form>
+		</Field>
+
+		<Field>
+			<Caption>Mã</Caption>
+			<Model>Issue</Model>
+			<Type>number</Type>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Dự án </Caption>
+			<Model>Project</Model>
+			<Type>select</Type>
+			<Source>tasks.getProjects</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<List>true</List>
+			<Search>true</Search>
+			<Sort>true</Sort>
+
+		</Field>
+
+		<Field>
+			<Caption>Hợp đồng</Caption>
+			<Model>Contract</Model>
+			<Type>select</Type>
+			<Source>tasks.getContracts</Source>
+			<Display>Id</Display>
+			<Display>OfficialNumber</Display>
+			<List>false</List>
+			<Search>true</Search>
+		</Field>
+
+		<Field>
+			<Caption>Tasks</Caption>
+			<Model>Name</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+			<Required>true</Required>
+		</Field>
+
+		<Field>
+			<Caption>Danh mục</Caption>
+			<Model>Category</Model>
+			<Type>select</Type>
+			<Source>tasks.getCategories</Source>
+	        <Display>Id</Display>
+			<Display>Name</Display>
+			<List>true</List>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Giai đoạn</Caption>
+			<Model>ProjectPhase</Model>
+			<Type>select</Type>
+			<Source>tasks.getPhases</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Mục tiêu</Caption>
+			<Model>Target</Model>
+			<Type>select</Type>
+			<Source>tasks.getTargets</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Trạng thái</Caption>
+			<Model>Status</Model>
+			<Type>select</Type>
+			<Source>tasks.getStatus</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<QuickFilter>true</QuickFilter>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Tình trạng</Caption>
+			<Model>State</Model>
+			<Type>flag</Type>
+			<Source>tasks.getStates</Source>
+			<SourceType>static</SourceType>
+			<QuickFilter>true</QuickFilter>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Nhân sự</Caption>
+			<Model>Worker</Model>
+			<Type>select</Type>
+			<Source>tasks.getEmployee</Source>
+			<Display>UserId</Display>
+			<Display>Username</Display>
+			<List>true</List>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Điểm mốc</Caption>
+			<Model>Milestone</Model>
+			<Type>select</Type>
+			<Source>tasks.getMilestone</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Thời gian</Caption>
+			<Model>PlanManHour</Model>
+			<Type>number</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Tiến độ (%)</Caption>
+			<Model>Progress</Model>
+			<Type>number</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Còn lại</Caption>
+			<Model>RemainingManHour</Model>
+			<Type>number</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Kế hoạch</Caption>
+			<Model>PlanStartDate</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+			<List>true</List>
+			<Required>true</Required>
+		</Field>
+		<Field>
+			<Caption>Ngày tạo</Caption>
+			<Model>Created</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Hạn xử lý</Caption>
+			<Model>Deadline</Model>
+			<Type>date</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Báo cáo hoàn thành</Caption>
+			<Model>ReportFinishDate</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Mô tả</Caption>
+			<Model>Description</Model>
+			<Type>text</Type>
+			x
+		</Field>
+		<Field>
+			<Caption>Nguyên nhân</Caption>
+			<Model>Cause</Model>
+			<Type>text</Type>
+
+		</Field>
+	</Form>
+
+
+	<xSearch>
+		<Caption>Từ ngày</Caption>
+		<Model>StartDate</Model>
+		<Type>date</Type>
+	</xSearch>
+
+	<xSearch>
+		<Caption>Đến ngày</Caption>
+		<Model>EndDate</Model>
+		<Type>date</Type>
+	</xSearch>
+
+    <xBottomBar>
+        <Icon>mdi-action-thumb-up</Icon>
+        <Model>TotalLikes</Model>
+        <Action>like</Action>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>number</Type>
+    </xBottomBar>
+
+    <xBottomBar>
+        <Icon>mdi-communication-forum</Icon>
+        <Model>TotalComments</Model>
+        <Action>comment</Action>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>number</Type>
+    </xBottomBar>
+
+
+    <xBottomBar>
+        <Icon>mdi-action-assignment</Icon>
+        <Model>PlanManHour</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>string</Type>
+    </xBottomBar>
+
+    <xBottomBar>
+        <Icon>mdi-editor-insert-invitation</Icon>
+        <Model>PlanStartDate</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>date</Type>
+    </xBottomBar>
+
+	<Action>
+        <Delete>tasks.DeleteTask</Delete>
+        <Get>tasks.SearchTask</Get>
+        <Add>tasks.InsertTask</Add>
+        <Update>tasks.UpdateTask</Update>
+	</Action>
+</Application>

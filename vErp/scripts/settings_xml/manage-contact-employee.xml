@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Application>
+	<template>face-timeline</template>
+	<xlistPrefix>-</xlistPrefix>
+
+	<Form>
+
+		<Field>
+			<Caption></Caption>
+			<Model>DisplayName;Email</Model>
+			<Type>number</Type>
+			<Title>true</Title>
+			<List>true</List>
+			<Form>false</Form>
+		</Field>
+
+
+		<Field>
+			<Caption>STT</Caption>
+			<Model>Index</Model>
+			<Type>number</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Tên đầy đủ</Caption>
+			<Model>DisplayName</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Địa chỉ liên hệ</Caption>
+			<Model>Address</Model>
+			<Type>text</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Email</Caption>
+			<Model>Email</Model>
+			<Type>text</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Fax</Caption>
+			<Model>Fax</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Điện thoại</Caption>
+			<Model>Phone</Model>
+			<Type>number</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Nick</Caption>
+			<Model>IM</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Sinh nhật</Caption>
+			<Model>Birthday</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Số ĐKKD/CMTND</Caption>
+			<Model>IdentityCode</Model>
+			<Type>number</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Ngày cấp ĐKKD/CMTND</Caption>
+			<Model>IdentityDate</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Nơi cấp CMND</Caption>
+			<Model>IdentityPlace</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Tài khoản công ty</Caption>
+			<Model>IdName</Model>
+			<Type>text</Type>
+			<List>true</List>
+
+		</Field>
+		<Field>
+			<Caption>Mã số thuế</Caption>
+			<Model>TaxCode</Model>
+			<Type>number</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Nơi sinh</Caption>
+			<Model>BirthPlace</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Website</Caption>
+			<Model>Website</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Facebook</Caption>
+			<Model>Facebook</Model>
+			<Type>text</Type>
+		</Field>
+
+		<Field>
+			<Caption>Ngành nghề</Caption>
+			<Model>Sector</Model>
+			<Type>select</Type>
+			<Source>contact.getSectors</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+		</Field>
+		
+		<Field>
+			<Caption>Tình trạng hôn nhân</Caption>
+			<Model>MaritalStatus</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Ngày thử việc</Caption>
+			<Model>TrialPeriodDate</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Ngày vào chính thức </Caption>
+			<Model>ContractDate</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Mức lương</Caption>
+			<Model>Salary</Model>
+			<Type>number</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Phòng ban</Caption>
+			<Model>Organization</Model>
+			<Type>select</Type>
+			<Source>contact.getOrganization</Source>
+			<Display>GroupId</Display>
+			<Display>GroupName</Display>
+		</Field>
+		<Field>
+			<Caption>Chức vụ</Caption>
+			<Model>Sector</Model>
+			<Type>select</Type>
+			<Source>
+				<RequestAction>SearchCategory</RequestAction>
+				<RequestClass>xProfile</RequestClass>
+				<StaticFields>Name;Code</StaticFields>
+				<limit>20</limit>
+				<start>0</start>
+				<page>1</page>
+				<ParentCode>xSystem.Setting.Title</ParentCode>
+				<ConditionFields>ParentCode;</ConditionFields>
+			</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+		</Field>
+		<Field>
+			<Caption>Người quản lý trực tiếp</Caption>
+			<Model>Manager</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Ngày tham gia BHXH</Caption>
+			<Model>InsuranceDate</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Nơi cấp BHXH</Caption>
+			<Model>InsurancePlace</Model>
+			<Type>text</Type>
+
+		</Field>
+		<Field>
+			<Caption>Ngày tham gia BHXH đầu tiên</Caption>
+			<Model>InsuranceStartDate</Model>
+			<Type>date</Type>
+		</Field>
+		<Field>
+			<Caption>Hộ khẩu thường trú</Caption>
+			<Model>PermanentResident</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Ngày phép đã sử dụng</Caption>
+			<Model>VacationUsed</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Ngày phép Còn lại</Caption>
+			<Model>VacationLeft</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Chế độ thai sản và con nhỏ</Caption>
+			<Model>ParentalLeave</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Số tài khoản</Caption>
+			<Model>BankAccount</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Mở tài khoản ngân hàng</Caption>
+			<Model>BankName</Model>
+			<Type>text</Type>
+		</Field>
+	</Form>
+
+	<xBottomBar>
+		<Icon>mdi-action-thumb-up</Icon>
+		<Model>TotalLikes</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>number</Type>
+	</xBottomBar>
+
+	<xBottomBar>
+		<Icon>mdi-communication-forum</Icon>
+		<Model>TotalComments</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>number</Type>
+	</xBottomBar>
+	
+	<xBottomBar>
+		<Icon>mdi-editor-insert-invitation</Icon>
+		<Model>Birthday</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>date</Type>
+	</xBottomBar>
+
+	<Action>
+		<Delete>contact.DeleteContactEmployee</Delete>
+		<Get>contact.SearchContactEmployee</Get>
+		<Update>contact.UpdateContactEmployee</Update>
+		<Add>contact.InsertContactEmployee</Add>
+	</Action>
+
+</Application>

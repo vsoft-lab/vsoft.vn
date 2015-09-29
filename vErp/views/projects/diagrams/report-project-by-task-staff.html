@@ -1,0 +1,95 @@
+<div class="padding">
+    <div class="charts" ng-if="diagramReady">
+        <form ng-show="showReportTableDetail" class="form-inline  " role="form">
+
+            <div class="search-form">
+                <button class="waves-effect waves-light btn blue" hm-tap="{}" ns-popover
+                        ns-popover-template="popoverDiagrams22"
+                        ns-popover-trigger="click"
+                        ns-popover-placement="bottom|left">Options</button>
+
+                <button class="waves-effect waves-light btn blue" type="button" ng-click="onSearch()">View details</button>
+            </div>
+
+        </form>
+        <div ng-show="!reportNull" >
+            <highchart config="chartConfig" ></highchart>
+            <div class="table-chart table-chart-group">
+                <!-- <table class="table table-bordered text-center table-hover">
+                   <tr>
+                     <td>Đơn vị</td>
+                     <td ng-repeat="item in chartCategories">{{item}}</td>
+                   </tr>
+                   <tr>
+                     <td>Số lượng công việc</td>
+                     <td ng-repeat="item in chartCategories">{{taskSeries.data[$index]}}</td>
+                   </tr>
+                 </table>-->
+
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Đơn vị</th>
+                        <th>Số lượng công việc</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in chartCategories">
+                        <td class="text-left">{{item}}</td>
+                        <td class="text-right" class="text-right">{{taskSeries.data[$index]}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div ng-if="!diagramReady">
+
+        <div ng-show="reportNull" class="empty-data">
+            <i class="fa fa-bar-chart-o"></i>
+            <span class="glyphicon-class">Không có dữ liệu thống kê</span>
+        </div>
+
+        <div ng-show="!reportNull" class="empty-data">
+            <i class="fa fa-bar-chart-o"></i>
+            <img src="./images/spinner.png" alt="" class="fa-spinner"/> Loading data..
+        </div>
+
+    </div>
+
+
+</div>
+
+<script type="text/ng-template" id="popoverDiagrams22">
+    <div class="title-popover">
+        Tìm nhanh  <img ng-src="./images/close.png" hm-tap="hidePopover()">
+    </div>
+    <ul class="ul-popover diagram-search">
+        <li class="item item-checkbox" ng-repeat="item in searchConfigSelect" ng-click="openModalSearch(item.model)">
+            {{item.caption}}
+
+        </li>
+        <li>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Từ ngày
+                </div>
+                <input type="date" ng-model="config.startDate">
+            </label>
+        </li>
+        <li>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Đến ngày
+                </div>
+                <input type="date" ng-model="config.endDate">
+            </label>
+
+        </li>
+    </ul>
+</script>

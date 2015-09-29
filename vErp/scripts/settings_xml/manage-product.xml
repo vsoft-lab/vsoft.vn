@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Application>
+
+    <template>face-timeline</template>
+    <xlistPrefix>-</xlistPrefix>
+    <LineColor>
+        <Status>
+            <Code>5b514020-17d0-4048-8ecd-8ea26a927501</Code>
+            <Color>red</Color>
+        </Status>
+        <Status>
+            <Code>ab2e1a8c-9f05-424f-bce8-38caed076b60</Code>
+            <Color>purple</Color>
+        </Status>       
+    </LineColor>
+
+    <Form>
+        <Field>
+            <Caption></Caption>
+            <Model>Title;Name</Model>
+            <Type>text</Type>
+            <Title>true</Title>
+            <List>true</List>
+            <Form>false</Form>
+        </Field>
+
+        <Field>
+            <Caption>Mã sản phẩm</Caption>
+            <Model>Title</Model>
+            <Type>text</Type>
+            <Sort>true</Sort>
+        </Field>
+        <Field>
+            <Caption>Tên sản phẩm</Caption>
+            <Model>Name</Model>
+            <Type>text</Type>
+            <title>true</title>
+            <Sort>true</Sort>
+        </Field>
+        <Field>
+            <Caption>Loại sản phẩm</Caption>
+            <Model>Type</Model>
+            <Type>select</Type>
+            <Source>product.getProductType</Source>
+            <Display>Id</Display>
+            <Display>Name</Display>
+            <QuickFilter>true</QuickFilter>
+            <Search>true</Search>
+            <List>true</List>
+            <Sort>true</Sort>
+        </Field>
+        <Field>
+            <Caption>Đơn vị triển khai</Caption>
+            <Model>Parent</Model>
+            <Type>select</Type>
+            <Source>product.getProductParent</Source>
+            <Display>GroupId</Display>
+            <Display>GroupName</Display>
+            <Search>true</Search>
+            <List>true</List>
+            <Sort>true</Sort>
+
+        </Field>
+        <Field>
+            <Caption>Trạng thái</Caption>
+            <Model>Status</Model>
+            <Type>select</Type>
+            <Source>product.getProductStatus</Source>
+            <Display>Id</Display>
+            <Display>Name</Display>
+            <List>true</List>
+            <Search>true</Search>
+            <Sort>true</Sort>
+        </Field>
+        <Field>
+            <Caption>Phiên bản</Caption>
+            <Model>OfficialNumber</Model>
+            <Type>text</Type>
+            <Sort>true</Sort>
+        </Field>
+        <Field>
+            <Caption>Ngày ban hành</Caption>
+            <Model>PublishedDate</Model>
+            <Type>date</Type>
+            <List>true</List>
+            <Sort>true</Sort>
+        </Field>
+        <Field>
+            <Caption>Ngày hết hiệu lực</Caption>
+            <Model>ExpiredDate</Model>
+            <Type>date</Type>
+            <Sort>true</Sort>
+        </Field>
+    </Form>
+
+    
+    
+
+    <xBottomBar>
+        <Icon>mdi-action-thumb-up</Icon>
+        <Model>TotalLikes</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>number</Type>
+    </xBottomBar>
+
+    <xBottomBar>
+        <Icon>mdi-communication-forum</Icon>
+        <Model>TotalComments</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>number</Type>
+    </xBottomBar>
+    <xBottomBar>
+        <Icon>mdi-editor-insert-invitation</Icon>
+        <Model>PublishedDate</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>date</Type>
+    </xBottomBar>
+
+    <Action>
+        <Delete>product.DeleteProduct</Delete>
+        <Get>product.SearchProduct</Get>
+        <Add>product.InsertProduct</Add>
+        <Update>product.UpdateProduct</Update>
+    </Action>
+
+</Application>

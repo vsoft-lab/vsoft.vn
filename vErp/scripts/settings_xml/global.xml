@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Application>
+	<!--<BaseUri>http://money.xoffice.vn/xRequest.ashx</BaseUri>-->
+	<BaseUri>http://vsoft.vn:9000</BaseUri>
+	<AttachmentUri>http://vsoft.vn:9000/DownloadAttachment</AttachmentUri>
+</Application>

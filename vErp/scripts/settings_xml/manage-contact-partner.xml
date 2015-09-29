@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Application>
+	<template>face-timeline</template>
+	<xlistPrefix>-</xlistPrefix>
+
+	<xList>
+		<Caption>Tên đầy đủ</Caption>
+		<Model>ShortName;DisplayName</Model>
+		<title>true</title>
+	</xList>
+	<xList>
+		<Caption>Địa chỉ liên hệ</Caption>
+		<Model>Address</Model>
+	</xList>
+	<xList>
+		<Caption>Email</Caption>
+		<Model>Email</Model>
+	</xList>
+	<xList>
+		<Caption>Số điện thoại</Caption>
+		<Model>Phone</Model>
+	</xList>
+	<xList>
+		<Caption>Nick</Caption>
+		<Model>IM</Model>
+	</xList>
+	<xList>
+		<Caption>Tài khoản Công ty</Caption>
+		<Model>IdName</Model>
+	</xList>
+
+	<Form>
+
+		<Field>
+			<Caption></Caption>
+			<Model>ShortName;DisplayName</Model>
+			<Type>text</Type>
+			<Form>false</Form>
+			<List>true</List>
+			<Title>true</Title>
+		</Field>
+
+		<Field>
+			<Caption>STT</Caption>
+			<Model>Index</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Mã</Caption>
+			<Model>ShortName</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Tên KH</Caption>
+			<Model>DisplayName</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Tên tiếng Anh</Caption>
+			<Model>InternationalName</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Địa chỉ liên hệ</Caption>
+			<Model>Address</Model>
+			<Type>text</Type>
+			<List>true</List>
+		</Field>
+		<Field>
+			<Caption>Người Liên Hệ</Caption>
+			<Model>ContactPerson</Model>
+			<Type>select</Type>
+			<Source>contact.getContactPerson</Source>
+			<Display>Id</Display>
+			<Display>DisplayName</Display>
+			<Search>true</Search>
+		</Field>
+		<Field>
+			<Caption>Fax</Caption>
+			<Model>Fax</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Nick chat</Caption>
+			<Model>IM</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Số ĐKKD/CMTND</Caption>
+			<Model>IdentityCode</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Website</Caption>
+			<Model>Website</Model>
+			<Type>text</Type>
+			<List>true</List>
+		</Field>
+		<Field>
+			<Caption>Ngành nghề</Caption>
+			<Model>Sector</Model>
+			<Type>select</Type>
+			<Source>contact.getSectors</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<Search>true</Search>
+		</Field>
+		<Field>
+			<Caption>Tỉnh</Caption>
+			<Model>Location</Model>
+			<Type>select</Type>
+			<Source>contact.getLocations</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<Search>true</Search>
+		</Field>
+		<Field>
+			<Caption>Phụ Trách</Caption>
+			<Model>Curator</Model>
+			<Type>select</Type>
+			<Source>contact.getCurators</Source>
+			<Display>UserId</Display>
+			<Display>Username</Display>
+			<Search>true</Search>
+		</Field>
+		<Field>
+			<Caption>Điện thoại</Caption>
+			<Model>Phone</Model>
+			<Type>text</Type>
+			<List>true</List>
+		</Field>
+		<Field>
+			<Caption>Email</Caption>
+			<Model>Email</Model>
+			<Type>text</Type>
+			<List>true</List>
+		</Field>
+		<Field>
+			<Caption>Sinh nhật</Caption>
+			<Model>Birthday</Model>
+			<Type>date</Type>
+		</Field>
+		<Field>
+			<Caption>Mã số thuế</Caption>
+			<Model>TaxCode</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Facebook</Caption>
+			<Model>Facebook</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Số tài khoản</Caption>
+			<Model>BankAccount</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Mở tại ngân hàng</Caption>
+			<Model>BankName</Model>
+			<Type>text</Type>
+		</Field>
+	</Form>
+
+
+	<xBottomBar>
+		<Icon>mdi-action-thumb-up</Icon>
+		<Model>TotalLikes</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>number</Type>
+	</xBottomBar>
+
+	<xBottomBar>
+		<Icon>mdi-communication-forum</Icon>
+		<Model>TotalComments</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>number</Type>
+	</xBottomBar>
+	<xBottomBar>
+		<Icon>mdi-editor-insert-invitation</Icon>
+		<Model>Birthday</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>date</Type>
+	</xBottomBar>
+
+	<Action>
+		<Delete>contact.DeleteContactPartner</Delete>
+		<Get>contact.SearchContactPartner</Get>
+		<Update>contact.UpdateContactPartner</Update>
+		<Add>contact.InsertContactPartner</Add>
+	</Action>
+
+
+</Application>

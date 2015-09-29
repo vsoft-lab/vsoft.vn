@@ -1,0 +1,32 @@
+<div class="modal-search">
+    <div class="title-modal">
+        Sửa {{_.size(selectedId)}} bản ghi
+        <button hm-tap="closeThisDialog()">Đóng</button>
+    </div>
+    <div class="content-modal">
+        <div class="x-form">
+
+        
+            <div class="list" ng-repeat="field in stateSettings.Form.Field">
+                
+                <div class="item item-input item-select" ng-if="field.Type == 'select'">
+                    <div class="input-label">
+                        {{field.Caption}}
+                    </div>
+                    <select ng-model="selectedItem[field.Model]"
+                    ng-options="option.value as option.caption for option in field.options"
+                    ng-change="selectChangeValue(field.Model, field.options)"
+                    class="select-control">
+                        <option value="">Chọn {{field.Caption}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="button-bar">
+                <a class="button" hm-tap="editListItem()">Sửa</a>
+                <a class="button" hm-tap="closeThisDialog()">Quay lại</a>
+            </div>
+        </div>
+    </div>
+</div>

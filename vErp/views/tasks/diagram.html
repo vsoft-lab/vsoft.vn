@@ -1,0 +1,73 @@
+<div class="content" fix-height>
+
+    <div ng-switch="$state.params.url">
+
+        <div ng-switch-when="bieu-do-tong-quan" >
+
+            <div class="row">
+                <report-task-by-project></report-task-by-project>
+            </div>
+
+            <div class="row">
+                <report-task-by-target></report-task-by-target>
+            </div>
+
+            <div class="row">
+                <report-task-by-employee></report-task-by-employee>
+            </div>
+
+            <div class="row">
+                <report-task-by-phase></report-task-by-phase>
+            </div>
+
+
+            <div class="row">
+                <report-task-by-category></report-task-by-category>
+            </div>
+
+            <div class="row">
+                <report-task-by-status></report-task-by-status>
+            </div>
+
+        </div>
+
+
+        <div  ng-switch-when="theo-du-an">
+            <report-task-by-project show-filter="true"></report-task-by-project>
+        </div>
+
+        <div  ng-switch-when="theo-muc-tieu">
+            <report-task-by-target show-filter="true"></report-task-by-target>
+        </div>
+
+        <div  ng-switch-when="theo-muc-trang-thai">
+            <report-task-by-target show-filter="true"></report-task-by-target>
+        </div>
+
+        <div ng-switch-when="theo-nhan-su">
+            <report-task-by-employee show-filter="true"></report-task-by-employee>
+        </div>
+
+
+        <div ng-switch-when="theo-giai-doan">
+            <report-task-by-phase show-filter="true"></report-task-by-phase>
+        </div>
+
+
+        <div  ng-switch-when="theo-danh-muc">
+            <report-task-by-category show-filter="true"></report-task-by-category>
+        </div>
+
+        <div ng-switch-when="theo-trang-thai">
+            <report-task-by-status show-filter="true"></report-task-by-status>
+        </div>
+
+
+        <div ng-switch-default>
+            <report-task-by-status show-filter="false"></report-task-by-status>
+        </div>
+
+    </div>
+
+
+</div>

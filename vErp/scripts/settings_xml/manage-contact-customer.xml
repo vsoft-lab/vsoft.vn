@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Application>
+	<template>face-timeline</template>
+	<xlistPrefix>-</xlistPrefix>
+
+	<Form>
+		<Field>
+			<Caption></Caption>
+			<Model>ShortName;DisplayName</Model>
+			<Type>number</Type>
+			<Title>true</Title>
+			<List>true</List>
+			<Form>false</Form>
+		</Field>
+
+		<Field>
+			<Caption>STT</Caption>
+			<Model>Index</Model>
+			<Type>number</Type>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Mã</Caption>
+			<Model>ShortName</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Tên Khách Hàng</Caption>
+			<Model>DisplayName</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Tên Tiếng Anh</Caption>
+			<Model>InternationalName</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Địa chỉ liên hệ</Caption>
+			<Model>Address</Model>
+			<Type>text</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Tỉnh</Caption>
+			<Model>Location</Model>
+			<Type>select</Type>
+			<Source>contact.getLocations</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<Search>true</Search>
+		</Field>
+
+		<Field>
+			<Caption>Phụ Trách</Caption>
+			<Model>Curator</Model>
+			<Type>select</Type>
+			<Source>contact.getCurators</Source>
+			<Display>UserId</Display>
+			<Display>Username</Display>
+			<Search>true</Search>
+			<List>true</List>
+		</Field>
+
+		<Field>
+			<Caption>Người Liên Hệ</Caption>
+			<Model>ContactPerson</Model>
+			<Type>select</Type>
+			<Source>contact.getContactPerson</Source>
+			<Display>Id</Display>
+			<Display>DisplayName</Display>
+			<Search>true</Search>
+		</Field>
+		<Field>
+			<Caption>Fax</Caption>
+			<Model>Fax</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Điện thoại</Caption>
+			<Model>Phone</Model>
+			<Type>text</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Email</Caption>
+			<Model>Email</Model>
+			<Type>text</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Nick</Caption>
+			<Model>IM</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Sinh nhật</Caption>
+			<Model>Birthday</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Số ĐKKD/CMTND</Caption>
+			<Model>IdentityCode</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Mã số thuế</Caption>
+			<Model>TaxCode</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Website</Caption>
+			<Model>Website</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Facebook</Caption>
+			<Model>Facebook</Model>
+			<Type>text</Type>
+		</Field>
+		<Field>
+			<Caption>Ngành nghề</Caption>
+			<Model>Sector</Model>
+			<Type>select</Type>
+			<Source>contact.getSectors</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+		</Field>
+		<Field>
+			<Caption>Số tài khoản</Caption>
+			<Model>BankAccount</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Mở tài khoản ngân hàng</Caption>
+			<Model>BankName</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+	</Form>
+
+	<xBottomBar>
+		<Icon>mdi-action-thumb-up</Icon>
+		<Model>TotalLikes</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>number</Type>
+	</xBottomBar>
+
+	<xBottomBar>
+		<Icon>mdi-communication-forum</Icon>
+		<Model>TotalComments</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>number</Type>
+	</xBottomBar>
+
+	<xBottomBar>
+		<Icon>mdi-editor-insert-invitation</Icon>
+		<Model>Birthday</Model>
+		<AlwayDisplay>true</AlwayDisplay>
+		<Type>date</Type>
+	</xBottomBar>
+
+	<Action>
+		<Delete>contact.DeleteContactCustomer</Delete>
+		<Get>contact.SearchContactCustomer</Get>
+		<Update>contact.UpdateContactCustomer</Update>
+		<Add>contact.InsertContactCustomer</Add>
+	</Action>
+
+</Application>

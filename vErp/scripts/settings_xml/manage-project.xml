@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Application>
+
+	<template>face-timeline</template>
+	<xlistPrefix>-</xlistPrefix>
+
+	<LineColor>
+	    <State>
+	        <Code>33253b70-e663-4f76-bdf6-a85978567b5e</Code>
+	        <Color>red</Color>
+	    </State>
+	    <State>
+	        <Code>5678fef9-1155-4070-8e98-7b930d4909bd</Code>
+	        <Color>purple</Color>
+	    </State>
+	    <State>
+	        <Code>6773a4e7-e4e5-469c-a097-9f877e5b8923</Code>
+	        <Color>green</Color>
+	    </State>
+	    <State>
+	        <Code>77a93d1b-9642-4d28-be7c-80c5765cc118</Code>
+	        <Color>blue</Color>
+	    </State>
+	</LineColor>
+
+	<Form>
+		<Field>
+			<Caption></Caption>
+			<Model>Name;ParentName</Model>			
+			<List>True</List>
+			<Title>true</Title>
+			<Form>false</Form>
+		</Field>
+		
+		<Field>
+			<Caption>Tên dự án</Caption>
+			<Model>Name</Model>
+			<Type>text</Type>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>PM</Caption>
+			<Model>Manager</Model>
+			<Type>select</Type>
+			<Source>project.getProjectManager</Source>
+			<Display>UserId</Display>
+			<Display>Username</Display>
+			<Search>true</Search>
+			<List>True</List>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Khách hàng</Caption>
+			<Model>Parent</Model>
+			<Type>select</Type>
+			<Source>project.getCustomers</Source>
+			<Display>Id</Display>
+			<Display>DisplayName</Display>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Ưu tiên</Caption>
+			<Model>Index</Model>
+			<Type>select</Type>
+			<Source>project.getPriority</Source>
+			<Display>Index</Display>
+			<Display>Name</Display>
+			<Search>true</Search>
+		</Field>
+		<Field>
+			<Caption>Đơn vị triển khai</Caption>
+			<Model>Department</Model>
+			<Type>select</Type>
+			<Source>project.getDepartment</Source>
+			<Display>GroupId</Display>
+			<Display>GroupName</Display>
+			<Search>true</Search>
+			<List>true</List>
+		</Field>
+		<Field>
+			<Caption>Trạng thái</Caption>
+			<Model>Status</Model>
+			<Type>select</Type>
+	        <Source>project.getProjectStatus</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<QuickFilter>true</QuickFilter>
+			<Search>true</Search>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Tình trạng</Caption>
+			<Model>State</Model>
+			<Type>select</Type>
+			<Source>project.getProjectState</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<Search>true</Search>
+			<List>true</List>
+		</Field>
+		<Field>
+			<Caption>Bắt đầu</Caption>
+			<Model>StartDate</Model>
+			<Type>date</Type>
+		</Field>
+		<Field>
+			<Caption>Kết thúc</Caption>
+			<Model>FinishDate</Model>
+			<Type>date</Type>
+		</Field>
+		<Field>
+			<Caption>Thời gian dự tính (MH)</Caption>
+			<Model>PlanManHour</Model>
+			<Type>number</Type>
+
+			<List>true</List>
+		</Field>
+		<Field>
+			<Caption>Thời gian thực tế (MH)</Caption>
+			<Model>ActualManHour</Model>
+			<Type>number</Type>
+			<List>true</List>
+		</Field>
+		<Field>
+			<Caption>Phiên bản</Caption>
+			<Model>Version</Model>
+			<Type>number</Type>
+		</Field>
+	</Form>
+
+    <xBottomBar>
+        <Icon>mdi-action-thumb-up</Icon>
+        <Model>TotalLikes</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>number</Type>
+    </xBottomBar>
+
+    <xBottomBar>
+        <Icon>mdi-communication-forum</Icon>
+        <Model>TotalComments</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>number</Type>
+    </xBottomBar>
+
+
+    <xBottomBar>
+        <Icon>mdi-editor-insert-invitation</Icon>
+        <Model>StartDate</Model>
+        <Type>date</Type>
+        <AlwayDisplay>true</AlwayDisplay>
+    </xBottomBar>
+
+    <xBottomBar>
+        <Icon>mdi-editor-insert-invitation</Icon>
+        <Model>FinishDate</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>date</Type>
+    </xBottomBar>
+
+
+
+	<Action>
+		<Delete>project.DeleteProject</Delete>
+		<Get>project.SearchProject</Get>
+		<Add>project.InsertProject</Add>
+		<Update>project.UpdateProject</Update>
+	</Action>
+
+
+</Application>

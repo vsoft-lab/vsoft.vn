@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Application>
+
+	<template>face-timeline</template>
+	<xlistPrefix>-</xlistPrefix>
+	<name>contract</name>
+	
+    <LineColor>
+        <Status>
+            <Code>1961e85d-0b6c-4e0d-aeda-fccad2cd234b</Code>
+            <Color>red</Color>
+        </Status>
+        <Status>
+            <Code>e2eb7c6d-bc3c-4401-9485-4591bc24b1b9</Code>
+            <Color>purple</Color>
+        </Status>
+        <Status>
+            <Code>6e85497e-6606-442c-ba40-3363daf87e9a</Code>
+            <Color>yellow</Color>
+        </Status>
+        <Status>
+            <Code>73b732d5-76d2-41d8-9494-7a771c4067bc</Code>
+            <Color>blue</Color>
+        </Status>
+        <Status>
+            <Code>1205ea34-ba96-404c-82cc-46dd0a950e6d</Code>
+            <Color>green</Color>
+        </Status>
+    </LineColor>
+
+	<Form>
+		<Field>
+			<Caption></Caption>
+			<Model>OfficialNumber;ParentName</Model>
+			<Type>text</Type>
+			<Title>true</Title>
+			<List>true</List>
+			<Form>false</Form>
+		</Field>
+
+		<Field>
+			<Caption>Loại hợp đồng</Caption>
+			<Model>Type</Model>
+			<Type>select</Type>
+			<Source>contract.getContractType</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<shortFilter>true</shortFilter>
+			<List>true</List>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Số hợp đồng</Caption>
+			<Model>OfficialNumber</Model>
+
+			<Type>text</Type>
+			<List>true</List>
+			<Sort>true</Sort>
+		</Field>
+
+		<Field>
+			<Caption>Đơn vị thực hiện</Caption>
+			<Model>Department</Model>
+			<Type>select</Type>
+			<Source>project.getDepartment</Source>
+			<Display>GroupId</Display>
+			<Display>GroupName</Display>
+			<List>true</List>
+			<Search>true</Search>
+		</Field>
+
+		<Field>
+			<Caption>Ngày ký</Caption>
+			<Model>PublishedDate</Model>
+			<Type>date</Type>
+			<Sort>true</Sort>
+		</Field>
+		
+		<Field>
+			<Caption>Mã khách hàng</Caption>
+			<Model>Parent</Model>
+			<Type>select</Type>
+	        <Source>contract.getCustomer</Source>
+			<Display>Id</Display>
+			<Display>ShortName</Display>
+		</Field>
+		<Field>
+			<Caption>Tên khách hàng</Caption>
+			<Model>Parent</Model>
+			<Type>select</Type>
+			<Source>contract.getCustomer</Source>
+			<Display>Id</Display>
+			<Display>DisplayName</Display>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Trạng thái</Caption>
+			<Model>Status</Model>
+			<Type>select</Type>
+			<Source>contract.getContractStatus</Source>
+			<Display>Id</Display>
+			<Display>Name</Display>
+			<List>true</List>
+			<Search>true</Search>
+			<Sort>true</Sort>
+		</Field>
+		<Field>
+			<Caption>Tổng giá trị</Caption>
+			<Model>TotalValue</Model>
+			<Type>number</Type>
+			<List>true</List>
+		</Field>
+		<Field>
+			<Caption>Thanh toán đợt 1</Caption>
+			<Model>Payment1</Model>
+			<Type>number</Type>
+		</Field>
+		<Field>
+			<Caption>Thanh toán đợt 2</Caption>
+			<Model>Payment2</Model>
+			<Type>number</Type>
+		</Field>
+		<Field>
+			<Caption>Thanh toán đợt 3</Caption>
+			<Model>Payment3</Model>
+			<Type>number</Type>
+		</Field>
+		<Field>
+			<Caption>Chi phí kinh doanh</Caption>
+			<Model>BusinessExpense</Model>
+			<Type>number</Type>
+		</Field>
+		<Field>
+			<Caption>Chi phí FB</Caption>
+			<Model>CommissionExpense</Model>
+			<Type>number</Type>
+		</Field>
+		<Field>
+			<Caption>Thực thu</Caption>
+			<Model>ActualValue</Model>
+			<Type>number</Type>
+			<List>true</List>
+		</Field>
+	</Form>		
+
+    <xBottomBar>
+        <Icon>mdi-action-thumb-up</Icon>
+        <Model>TotalLikes</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>number</Type>
+    </xBottomBar>
+
+    <xBottomBar>
+        <Icon>mdi-communication-forum</Icon>
+        <Model>TotalComments</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>number</Type>
+    </xBottomBar>
+
+
+
+    <xBottomBar>
+        <Icon>mdi-action-assignment</Icon>
+        <Model>TypeName</Model>
+        <Type>text</Type>
+        <AlwayDisplay>true</AlwayDisplay>
+    </xBottomBar>
+
+    <xBottomBar>
+        <Icon>mdi-editor-insert-invitation</Icon>
+        <Model>PublishedDate</Model>
+        <AlwayDisplay>true</AlwayDisplay>
+        <Type>date</Type>
+    </xBottomBar>
+	
+	<Action>
+		<Delete>contract.DeleteContract</Delete>
+		<Get>contract.SearchContract</Get>
+		<Update>contract.UpdateContract</Update>
+		<Add>contract.InsertContract</Add>
+	</Action>
+
+
+</Application>

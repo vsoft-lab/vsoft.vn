@@ -1,0 +1,20 @@
+<div class="notification" lr-infinite-scroll="loadMore()" time-threshold="600" scroll-threshold="1">
+    <div>
+
+        <div>
+            <h3>{{currentNotifySetting.name}}</h3>
+            <ul>
+                <li ng-repeat="item in notifyDataSource"><a>{{item[currentNotifySetting.Fields]}}</a></li>
+            </ul>
+
+            <span ng-if="notifyDataSource.length == 0 && dataLoaded" class="padding">
+                Không có dữ liệu
+            </span>
+            
+            <span ng-if="notifyDataSource.length == 0 && !dataLoaded" class="padding">
+               <img src="./images/spinner.png" alt="" class="fa-spinner"/> Loading data
+            </span>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Application>
+    <getProductType>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <ParentCode>xSystem.Settings.Product.Type</ParentCode>
+        <ConditionFields>StartIndex;EndIndex;ParentCode</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Name;Code</StaticFields>
+    </getProductType>
+
+    <getProductParent>
+        <RequestAction>SearchGroup</RequestAction>
+        <RequestClass>BPM</RequestClass>
+        <ConditionFields>GroupType</ConditionFields>
+        <GroupType>1</GroupType>
+        <limit>20</limit>
+        <page>1</page>
+        <start>0</start>
+    </getProductParent>
+
+    <getProductStatus>
+        <RequestAction>SearchCategory</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <ParentCode>xSystem.Settings.Product.Status</ParentCode>
+        <ConditionFields>StartIndex;EndIndex;ParentCode</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>20</EndIndex>
+        <StaticFields>Name;Code</StaticFields>
+    </getProductStatus>
+
+
+    <DeleteProduct>
+        <RequestAction>DeleteDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+    </DeleteProduct>
+
+    <SearchProduct>
+        <RequestAction>SearchDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <Code>Product</Code>
+        <ConditionFields>StartIndex;EndIndex;Code</ConditionFields>
+        <StartIndex>1</StartIndex>
+        <EndIndex>10</EndIndex>
+        <StaticFields>Title;Name;Type;Parent;Status;OfficialNumber;PublishedDate;ExpiredDate;Code;Id;State
+        </StaticFields>
+        <DynamicFields>TypeName;ParentName;StatusName</DynamicFields>
+    </SearchProduct>
+
+    <InsertProduct>
+        <RequestAction>InsertDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <Code>Product</Code>
+        <StaticFields>Title;Name;Type;Parent;Status;OfficialNumber;PublishedDate;ExpiredDate;Code;Id</StaticFields>
+        <DynamicFields>TypeName;ParentName;StatusName</DynamicFields>
+    </InsertProduct>
+
+    <UpdateProduct>
+        <RequestAction>UpdateDocument</RequestAction>
+        <RequestClass>xDocument</RequestClass>
+        <Code>Product</Code>
+        <StaticFields>Title;Name;Type;Parent;Status;OfficialNumber;PublishedDate;ExpiredDate;Code;Id</StaticFields>
+        <DynamicFields>TypeName;ParentName;StatusName</DynamicFields>
+    </UpdateProduct>
+
+</Application>
