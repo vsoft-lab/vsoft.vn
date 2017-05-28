@@ -2533,8 +2533,27 @@ h4.who-see {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(160, 20, 20, 0.6);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(90, 9, 9, 0.6);
 }
+#offer .container {
+    padding: 90px 0;
+}
+#offer .col-md-4 {
+    text-align: center;
+}
+#offer .sub {
+    margin-top: 20px;
+}
 #offer label {
     margin-bottom: 10px;
+}
+#offer ul {
+    text-align: left;
+}
+#offer article {
+    margin-bottom: 25px;
+}
+#offer strong {
+        margin-bottom: 10px;
+    display: block;
 }
 .rq-title {
     font-size: 24px;
@@ -2542,7 +2561,7 @@ h4.who-see {
     text-align: center;
     display: inline-block;
     padding: 0 10px;
-    margin: 50px auto 20px 0;
+    margin: 0px auto 20px 0;
     border-bottom: 1px dotted white;
 }
 @keyframes hover-color {
