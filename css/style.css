@@ -2675,3 +2675,241 @@ h4.who-see {
 .magic-checkbox:checked[disabled] + label:before {
   border: #c9e2f9;
   background: #c9e2f9; }
+
+
+
+
+
+
+
+
+
+
+
+/* Homepage Half Face */
+.face {
+  width: 100%;
+  position: relative;
+  /* Show default image */
+  /* Descriptions */
+  /* Inline media queries */
+}
+.face .face-img {
+  display: block;
+  margin: 0px;
+}
+.face a {
+  color: #666666;
+  text-decoration: none;
+}
+.face .coder,
+.face .designer {
+  position: absolute;
+  width: 40%;
+  display: block;
+  z-index: 10;
+  height: 15%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+}
+.face .coder h1,
+.face .designer h1 {
+  font-size: 22px;
+  font-size: 2.2rem;
+}
+.face .designer {
+  left: 0;
+}
+.face .coder {
+  right: 0;
+  text-align: right;
+}
+.face .designer-img,
+.face .coder-img,
+.face .designer-bg,
+.face .coder-bg,
+.face .coder p,
+.face .designer p {
+  display: none;
+}
+@media only screen and (min-width: 321px) {
+  .face .coder h1,
+  .face .designer h1 {
+    font-size: 26px;
+    font-size: 2.6rem;
+  }
+}
+@media only screen and (min-width: 376px) {
+  .face .coder h1,
+  .face .designer h1 {
+    font-size: 30px;
+    font-size: 3rem;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .face .coder h1,
+  .face .designer h1 {
+    font-size: 42px;
+    font-size: 4.2rem;
+  }
+}
+@media only screen and (min-width: 600px) {
+  .face .coder h1,
+  .face .designer h1 {
+    font-size: 47px;
+    font-size: 4.7rem;
+  }
+}
+@media only screen and (min-width: 750px) {
+  .face .coder,
+  .face .designer {
+    width: 25%;
+    height: 35%;
+  }
+  .face .coder h1,
+  .face .designer h1 {
+    font-size: 45px;
+    font-size: 4.5rem;
+  }
+  .face .coder .more,
+  .face .designer .more {
+    display: none;
+  }
+  .face .coder p,
+  .face .designer p {
+    display: block;
+    font-size: 16px;
+    font-size: 1.6rem;
+    margin: 0px;
+  }
+}
+@media only screen and (min-width: 860px) {
+  .face .coder,
+  .face .designer {
+    width: 30%;
+    height: 30%;
+  }
+  .face .coder h1,
+  .face .designer h1 {
+    font-size: 58px;
+    font-size: 5.8rem;
+  }
+  .face .coder p,
+  .face .designer p {
+    font-size: 17px;
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .face .coder,
+  .face .designer {
+    height: 40%;
+  }
+  .face .coder h1,
+  .face .designer h1 {
+    font-size: 70px;
+    font-size: 7rem;
+  }
+  .face .coder .more,
+  .face .designer .more {
+    display: inline;
+  }
+}
+@media only screen and (min-width: 1140px) {
+  .face {
+    width: 1040px;
+    height: 600px;
+    position: relative;
+    /* Face images */
+    /* Background images */
+    /* Hide default image with no effects */
+  }
+  .face .coder,
+  .face .designer {
+    width: 520px;
+    height: 600px;
+    top: 0px;
+    position: absolute;
+  }
+  .face .coder .description,
+  .face .designer .description {
+    position: absolute;
+    top: 180px;
+    width: 270px;
+  }
+  .face .coder .arrow,
+  .face .designer .arrow {
+    width: 85px;
+    height: 140px;
+    background: url(../images/sprite.png) no-repeat;
+    display: block;
+    position: absolute;
+    top: 20px;
+  }
+  .face .coder p,
+  .face .designer p {
+    font-size: 18px;
+    font-size: 1.8rem;
+    line-height: 1.4em;
+  }
+  .face .coder {
+    text-align: left;
+    right: 0px;
+  }
+  .face .coder .description {
+    right: 0px;
+  }
+  .face .coder .arrow {
+    right: 0px;
+    background-position: 0px -751px;
+  }
+  .face .designer {
+    left: 0px;
+  }
+  .face .designer .description {
+    left: 0px;
+  }
+  .face .designer .arrow {
+    left: 0px;
+    background-position: 0px -892px;
+  }
+  .face .designer-img,
+  .face .coder-img {
+    width: 420px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+    background: url(../images/sprite-home.png) 0 0 no-repeat;
+    display: block;
+    z-index: 1;
+  }
+  .face .designer-img {
+    background-position: 0px -600px;
+    left: 100px;
+  }
+  .face .coder-img {
+    background-position: 100% 0px;
+    right: 100px;
+  }
+  .face .designer-bg,
+  .face .coder-bg {
+    width: 420px;
+    height: 200px;
+    position: absolute;
+    bottom: 0px;
+    background: url(../images/sprite-home.png) 0 -1300px no-repeat;
+    display: block;
+  }
+  .face .designer-bg {
+    left: 100px;
+  }
+  .face .coder-bg {
+    right: 100px;
+    background-position: 100% -1300px;
+  }
+  .face .face-img {
+    display: none;
+  }
+}
+
